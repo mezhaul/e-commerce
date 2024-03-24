@@ -85,9 +85,9 @@ const Login:Component = () => {
                         </button>
                     </div>
                     <div class="flex items-center gap-2">
-                        <div class="border-b w-1/2 border-black"></div>
+                        <div class="border-b w-1/2 border-gray-300"></div>
                         <div>OR</div>
-                        <div class="border-b w-1/2 border-black"></div>
+                        <div class="border-b w-1/2 border-gray-300"></div>
                     </div>
                     <div>
                         <div class="pb-2">
@@ -101,7 +101,7 @@ const Login:Component = () => {
                             placeholder={dataError().email ? dataError().email : 'Email'}
                             onInput={enterData}
                             onChange={errorHandling}
-                            class="w-full border h-10 rounded-sm border-black px-2" 
+                            class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                         />
                         <div class="py-2">
                             <label>
@@ -114,7 +114,7 @@ const Login:Component = () => {
                             placeholder={dataError().password ? dataError().password : 'Password'}
                             onInput={enterData}
                             onChange={errorHandling}
-                            class="w-full border h-10 rounded-sm border-black px-2" 
+                            class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                         />
                         <button onClick={onSubmit} class="w-full my-5 bg-black text-white h-10 rounded-sm">{loading() ? <div class="loaderSmall m-auto"></div> : 'Login'}</button>
                         <div class="flex justify-between">

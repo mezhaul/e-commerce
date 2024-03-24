@@ -95,7 +95,7 @@ const Register:Component = () => {
 
     return (
         <div class="w-full flex h-screen bg-customColor">
-            <div class="hidden md:flex w-1/2 h-full bg-gray-100 border-r border-black" style={{"background-image":`url(${Woman})`,"background-size":"cover"}}></div>
+            <div class="hidden md:flex w-1/2 h-full bg-gray-100 border-r" style={{"background-image":`url(${Woman})`,"background-size":"cover"}}></div>
             <div class="w-full md:w-1/2 h-full flex">
                 <div class="w-10/12 max-w-[450px] m-auto flex-col">
                     <h1 class="text-2xl text-center underline">
@@ -112,7 +112,7 @@ const Register:Component = () => {
                         placeholder={dataError().name ? dataError().name : 'Name'}
                         onInput={enterData}
                         onChange={errorHandling}
-                        class="w-full border h-10 rounded-sm border-black px-2" 
+                        class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                     />
                     <div class="py-2">
                         <label>
@@ -125,7 +125,7 @@ const Register:Component = () => {
                         placeholder={dataError().email ? dataError().email : 'Email'}
                         onInput={enterData}
                         onChange={errorHandling}
-                        class="w-full border h-10 rounded-sm border-black px-2" 
+                        class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                     />
                     <div class="py-2">
                         <label>
@@ -138,7 +138,7 @@ const Register:Component = () => {
                         placeholder={dataError().password ? dataError().password : 'Password'}
                         onInput={enterData}
                         onChange={errorHandling}
-                        class="w-full border h-10 rounded-sm border-black px-2" 
+                        class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                     />
                     <div class="py-2">
                         <label>
@@ -151,7 +151,7 @@ const Register:Component = () => {
                         placeholder={dataError().repassword ? dataError().repassword : 'Confirm password'}
                         onInput={enterData}
                         onChange={errorHandling}
-                        class="w-full border h-10 rounded-sm border-black px-2" 
+                        class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                     />
                     <button onClick={onSubmit} class="w-full my-5 bg-black text-white h-10 rounded-sm">{loading() ? <div class="loader m-auto "></div> : 'Register'}</button>
                     <div class="flex justify-between">

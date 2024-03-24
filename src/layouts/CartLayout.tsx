@@ -36,7 +36,7 @@ const CartLayout:Component = () => {
 
     return (
         <div class="w-11/12 m-auto pt-20 flex gap-5">
-            <div class="w-full relative md:w-2/3 m-auto p-5 h-[87vh] bg-customColor border border-black rounded-sm">
+            <div class="w-full relative md:w-2/3 m-auto p-5 h-[87vh] bg-customColor border rounded-sm">
                 <div class="w-full flex justify-between">
                     <h1 class="text-2xl font-semibold">Cart Items</h1>
                     <button class="bg-sky-500 border border-sky-600 hover:bg-sky-600 text-sm h-8 px-5 text-white rounded-sm">
@@ -62,7 +62,7 @@ const CartLayout:Component = () => {
                 </div>
                 <div class="w-full flex flex-col gap-3 mt-2 h-[50vh] overflow-y-auto">
                     <For each={cart()}>{
-                        (i) => <div  class="w-full flex items-center bg-white border border-black">
+                        (i) => <div  class="w-full flex items-center bg-white border shadow">
                             <div class="w-1/5 px-2">
                                 <img src={i.images[0]} alt={i.name} class="w-14"/>
                             </div>
@@ -101,12 +101,12 @@ const CartLayout:Component = () => {
                 </div>
                 <div class="w-full absolute bottom-5 left-0 px-5">
                     <div class="w-full flex justify-end items-center">
-                        <div class="w-1/5 bg-white h-10 flex  border-l border-b border-t border-black rounded-l-sm">
+                        <div class="w-1/5 bg-white h-10 flex  border-l border-b border-t rounded-l-sm">
                             <h3 class="py-1 px-3 border-l my-auto">
                                 Total
                             </h3>
                         </div>
-                        <div class="w-1/5 bg-white h-10 flex border-b border-t border-black">
+                        <div class="w-1/5 bg-white h-10 flex border-b border-t ">
                             <h3 class="my-auto">
                                 R {getTotal()}
                             </h3>
@@ -114,7 +114,7 @@ const CartLayout:Component = () => {
                         <div class="w-1/5">
                             <button
                                 onClick={procceedToCheckout} 
-                                class="bg-black h-10 px-5 text-white w-full border border-black"
+                                class="bg-black h-10 px-5 text-white w-full border "
                             >
                                 Checkout
                             </button>
