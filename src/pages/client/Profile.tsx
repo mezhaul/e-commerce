@@ -112,7 +112,7 @@ const Profile:Component = () => {
                             value={userData().name} 
                             placeholder={userDataError().name !== '' ? userDataError().name : 'Enter name'}
                             onChange={(e) => handleChange(e)}
-                            class="w-full max-w-[450px] border h-9 border-black px-2"
+                            class="w-full max-w-[450px] border h-9 px-2"
                         />
                         <div class="py-2">
                             <label>Surname</label>
@@ -123,7 +123,7 @@ const Profile:Component = () => {
                             value={userData().surname} 
                             placeholder={userDataError().surname !== '' ? userDataError().surname : 'Enter surname'}
                             onChange={(e) => handleChange(e)}
-                            class="w-full max-w-[450px] border h-9 border-black px-2"
+                            class="w-full max-w-[450px] border h-9 px-2"
                         />
                         <div class="py-2">
                             <label>Email</label>
@@ -134,7 +134,7 @@ const Profile:Component = () => {
                             value={userData().email} 
                             placeholder={userDataError().email !== '' ? userDataError().email : 'Enter email'}
                             onChange={(e) => handleChange(e)}
-                            class="w-full max-w-[450px] border h-9 border-black px-2"
+                            class="w-full max-w-[450px] border h-9 px-2"
                         />
                         <div class="py-2">
                             <label>Cellphone</label>
@@ -145,7 +145,7 @@ const Profile:Component = () => {
                             value={userData().cellphone}
                             placeholder={userDataError().cellphone !== '' ? userDataError().cellphone : 'Enter cellphone'}
                             onChange={(e) => handleChange(e)} 
-                            class="w-full max-w-[450px] border h-9 border-black px-2"
+                            class="w-full max-w-[450px] border h-9 px-2"
                         />
                         <br></br>
                         <button
