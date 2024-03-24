@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* In your CSS file or a custom Tailwind configuration file */
+@layer utilities {
+    .h-vh-screen {
+      height: 60vh;
+    }
+}
+  
+.loaderSmall {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid black; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  
+.loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid black; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
