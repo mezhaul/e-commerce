@@ -127,7 +127,7 @@ const Nav: Component = () => {
 							</div>
 							<button
 								onClick={handleLogout}
-								class="bg-black text-white h-8 px-6 rounded-sm text-sm"
+								class="bg-black text-white h-8 px-6 rounded-sm text-sm mr-3"
 							>
 								Logout
 							</button>
