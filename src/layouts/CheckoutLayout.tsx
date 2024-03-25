@@ -117,7 +117,7 @@ const CheckoutLayout:Component = () => {
 
     return (   
         <div class="w-11/12 m-auto pt-20 flex gap-5">
-            <div class="w-full lg:w-2/3 m-auto p-5 md:h-[87vh] bg-customColor border border-black rounded-sm">
+            <div class="w-full lg:w-2/3 m-auto p-5 md:h-[87vh] bg-customColor border rounded-sm">
                 <h1 class="text-2xl pb-3">Checkout</h1>
                 <div class="w-full flex md:gap-5 flex-wrap md:flex-nowrap">
                     <div class="w-full md:w-1/2 flex flex-col gap-1">
@@ -126,7 +126,7 @@ const CheckoutLayout:Component = () => {
                         </div>
                         <div>
                             <For each={cart()}>{
-                                (i) => <div class="w-full border rounded-sm flex py-1 bg-white items-center border-black">
+                                (i) => <div class="w-full border rounded-sm flex py-1 bg-white items-center shadow">
                                     <div class="w-1/3 flex justify-center h-12">
                                         <img src={i.images[0]} alt={i.name} class="h-12"/>
                                     </div>
@@ -150,7 +150,7 @@ const CheckoutLayout:Component = () => {
                                     name="location"
                                     oninput={(e) => handleCheckoutData(e)}
                                     onChange={(e) => handleCheckoutDataError(e)}
-                                    class="w-full max-w-[450px] h-10 border border-black outline-none px-1"
+                                    class="w-full max-w-[450px] h-10 border outline-none px-1"
                                 >
                                     <option value="select">Select</option>
                                 </select>
@@ -162,7 +162,7 @@ const CheckoutLayout:Component = () => {
                                         onChange={(e) => handleCheckoutData(e)}
                                         oninput={(e) => handleCheckoutDataError(e)}
                                         placeholder={checkOutDataError().location ? checkOutDataError().location :"Enter location"}
-                                        class="border border-black  w-full max-w-[450px] h-10 text-sm px-8"
+                                        class="border  w-full max-w-[450px] h-10 text-sm px-8"
                                     />
                                     <IoLocate class="absolute top-3 left-3" />
                                 </div>
@@ -176,7 +176,7 @@ const CheckoutLayout:Component = () => {
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
                             placeholder="Enter name"
-                            class="w-full max-w-[450px] h-10 border border-black px-2"
+                            class="w-full max-w-[450px] h-10 border px-2"
                         />
                         <div>
                             <label>Contact number</label>
@@ -187,7 +187,7 @@ const CheckoutLayout:Component = () => {
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
                             placeholder="Primary number"
-                            class="w-full max-w-[450px] h-10 border border-black px-2"
+                            class="w-full max-w-[450px] h-10 border px-2"
                         />
                         <div>
                             <label>Alternative number</label>
@@ -198,7 +198,7 @@ const CheckoutLayout:Component = () => {
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
                             placeholder="Contact number"
-                            class="w-full max-w-[450px] h-10 border border-black px-2"
+                            class="w-full max-w-[450px] h-10 border px-2"
                         />
                         <div>
                             <label>Add Instructions</label>
@@ -210,7 +210,7 @@ const CheckoutLayout:Component = () => {
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
                             placeholder="Enter instructions"
-                            class="border border-black resize-none rounded-sm p-2"
+                            class="border resize-none rounded-sm p-2"
                         ></textarea>
                         <button
                             onclick={handleSubmit} 
