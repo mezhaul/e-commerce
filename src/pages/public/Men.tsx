@@ -1,5 +1,4 @@
 import { Component, For, createEffect, createSignal } from "solid-js"
-import ProductsLayout from "../../layouts/ProductsLayout";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import LoadingScreen from "../../components/general/LoadingScreen";
