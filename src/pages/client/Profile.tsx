@@ -8,6 +8,7 @@ import { useAuthContext } from "../../context/AuthContext"
 
 const Profile:Component = () => {
     const [ loading, setLoading ] = createSignal(false);
+    const [ btnLoading, setBtnLoadin ] = createSignal(false);
     const [ userData, setUserData ] = createSignal({
         name: '', 
         surname: '',
@@ -78,6 +79,7 @@ const Profile:Component = () => {
             }
             return
         }
+        setBtnLoadin(true);
         const userRef = doc(db, "users", `${userId}`);
             // Set the "capital" field of the city 'DC'
         try {
@@ -92,6 +94,7 @@ const Profile:Component = () => {
             console.log('An error has occured')
         } finally {
             alert('Profile updated successfully');
+            setBtnLoadin(false);
         }    
     }
 
@@ -150,9 +153,14 @@ const Profile:Component = () => {
                         <br></br>
                         <button
                             onClick={handleSubmit} 
-                            class="w-full max-w-[450px] bg-black h-9 mt-5 text-white"
+                            class="w-full max-w-[450px] absolute bottom-5 bg-black h-9 mt-5 text-white"
                         >
-                            Update
+                            {btnLoading() 
+                                ?
+                                    <div class="loaderSmall m-auto"></div>
+                                :
+                                    'Update'
+                            }
                         </button>
                     </>
                 :

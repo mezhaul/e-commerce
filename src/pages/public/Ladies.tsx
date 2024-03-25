@@ -1,35 +1,72 @@
-import { Component, createEffect, createSignal } from "solid-js"
-import ProductsLayout from "../../layouts/ProductsLayout";
+import { Component, For, createEffect, createSignal } from "solid-js";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
+import LoadingScreen from "../../components/general/LoadingScreen";
 
-const Ladies:Component = () => {
-    const [listOfLadiesProducts,setListOfLadiesProducts] = createSignal<any[]>([]);
+const Ladies: Component = () => {
+    const [listOfLadiesProducts, setListOfLadiesProducts] = createSignal<any[]>([]);
+    const [loading, setLoading] = createSignal(false);
 
     createEffect(() => {
-        getListOfLadiesProducts()
+        getListOfLadiesProducts();
     });
 
     const getListOfLadiesProducts = async () => {
         const q = query(collection(db, "products"), where("category", "==", "ladies"));
 
         const querySnapshot = await getDocs(q);
+        const newData: any = [];
         querySnapshot.forEach((doc) => {
-            const doc_id = {"id":doc.id}
-            const doc_data = doc.data()
-            const new_data = Object.assign(doc_id,doc_data);
-            setListOfLadiesProducts((prv) => ({...prv,new_data}));
-            console.log(new_data);
+            const doc_id = { "id": doc.id };
+            const doc_data = doc.data();
+            const new_data = Object.assign(doc_id, doc_data);
+            newData.push(new_data);
         });
-    }
-
-    console.log(listOfLadiesProducts());
+        setListOfLadiesProducts(newData);
+        setLoading(true);
+    };
 
     return (
-        <>
-           <ProductsLayout />
-        </>
-    )
-}
+        <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
+            {loading() 
+                ? (
+                    <div class="w-full flex flex-wrap">
+                        {listOfLadiesProducts().length > 0 
+                            ? (
+                                <For each={listOfLadiesProducts()}>
+                                    {(d) => 
+                                        <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6">
+                                            <div class="w-full hover:shadow bg-white border border-gray-300">
+                                                <div class="w-full bg-gray-200 h-56">
+                                                    <img src={d.images[0]} alt={d.title} class="h-52 m-auto"/>
+                                                </div>
+                                                <div class="px-2 pb-2 border-t border-gray-200">
+                                                    <h3 class="text-center text-md pt-2 pb-1 font-semibold">
+                                                        {d.name}
+                                                    </h3>
+                                                    <p class="text-sm text-center font-medium">
+                                                        {d.summary}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </For>
+                            )
+                            : (
+                                <div class="w-full h-full flex">
+                                    <div class="m-auto">
+                                        This store currently has no products
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+                )
+                : <LoadingScreen />
+            }
+        </div>
+    );
+};
 
 export default Ladies;
