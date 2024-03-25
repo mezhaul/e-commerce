@@ -4,10 +4,12 @@ import cookie from "cookiejs";
 import { useAuthContext } from "../../context/AuthContext";
 import { useNavigate } from "@solidjs/router";
 import useLogin from "../../hooks/userLogin";
+import { VsEye, VsEyeClosed } from 'solid-icons/vs';
 
 const Login:Component = () => {
     const [ loading, setLoading ] = createSignal(false);
     const navigate = useNavigate();
+    const [ passwordShow, setPasswordShow ] = createSignal(false); 
     const { userLogin } = useLogin();
     const [data, setData] = createSignal({
         email: '',
@@ -68,6 +70,10 @@ const Login:Component = () => {
         setLoading(false);
     }
 
+    const togglePassword = () => {
+        setPasswordShow(!passwordShow());
+    }
+
     return (
         <div class="w-full flex h-screen bg-customColor">
             <div class="hidden md:flex w-1/2 h-full bg-gray-100" style={{"background-image":`url(${Woman})`,"background-size":"cover","background-position-y":"-300px;"}}></div>
@@ -108,14 +114,28 @@ const Login:Component = () => {
                                 Password
                             </label>
                         </div>
-                        <input 
-                            type="password" 
-                            name="password"
-                            placeholder={dataError().password ? dataError().password : 'Password'}
-                            onInput={enterData}
-                            onChange={errorHandling}
-                            class="w-full border h-10 rounded-sm border-gray-300 px-2" 
-                        />
+                        <div class="w-full relative">
+                            <input 
+                                type={passwordShow() ? "text" : "password"} 
+                                name="password"
+                                placeholder={dataError().password ? dataError().password : 'Password'}
+                                onInput={enterData}
+                                onChange={errorHandling}
+                                class="w-full border h-10 rounded-sm border-gray-300 px-2" 
+                            />
+                            <button
+                                onclick={togglePassword} 
+                                class={passwordShow() ? "absolute right-3 top-3 text-xl" : "hidden"}
+                            >
+                                <VsEye />
+                            </button>
+                            <button 
+                                onclick={togglePassword}
+                                class={passwordShow() ? "hidden" : "absolute right-3 top-3 text-xl"}
+                            >
+                                <VsEyeClosed />
+                            </button>
+                        </div>
                         <button onClick={onSubmit} class="w-full my-5 bg-black text-white h-10 rounded-sm">{loading() ? <div class="loaderSmall m-auto"></div> : 'Login'}</button>
                         <div class="flex justify-between">
                             <p>

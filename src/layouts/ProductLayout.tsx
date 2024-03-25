@@ -146,7 +146,7 @@ const ProductLayout:Component = () => {
                                     (s) => <div>
                                         <button
                                             onClick={() => selectSize(s)} 
-                                            class={`${selectedData().size === s ? "bg-sky-600 text-white" : null} py-1 border border-gray-300 w-24`}
+                                            class={`${selectedData().size === s ? "bg-sky-600 text-white" : null} py-1 border border-gray-300 w-16`}
                                         >
                                             {s}
                                         </button>
