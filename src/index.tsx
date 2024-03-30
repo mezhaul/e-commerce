@@ -35,6 +35,7 @@ import { CartContextProvider } from './context/CartContext'
 import Checkout from './pages/public/Checkout'
 import Success from './pages/public/Success'
 import Cancel from './pages/public/Cancel'
+import Beauty from './pages/public/Beauty'
 
 
 const root = document.getElementById('root')
@@ -44,6 +45,7 @@ render(() => (
 		<CartContextProvider>
 			<Router root={App}>
 				<Route path="/" component={Home} />
+				<Route path="/beauty" component={Beauty} />
 				<Route path="/shops" component={Shops} />
 				<Route path="/shop/:id" component={Products} />
 				<Route path="/product/:id" component={Product} />

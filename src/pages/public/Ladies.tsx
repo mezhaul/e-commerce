@@ -31,7 +31,7 @@ const Ladies: Component = () => {
         <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
             {loading() 
                 ? (
-                    <div class="w-full flex flex-wrap gap-[9.5px]">
+                    <div class="w-full flex flex-wrap md:gap-[9.5px] gap-4">
                         {listOfLadiesProducts().length > 0 
                             ? (
                                 <For each={listOfLadiesProducts()}>
@@ -55,7 +55,7 @@ const Ladies: Component = () => {
                                 </For>
                             )
                             : (
-                                <div class="w-full h-full flex">
+                                <div class="w-full h-screen flex">
                                     <div class="m-auto">
                                         This store currently has no products
                                     </div>

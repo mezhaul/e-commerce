@@ -54,7 +54,7 @@ const Men:Component = () => {
                                 </For>
                             )
                             : (
-                                <div class="w-full h-full flex">
+                                <div class="w-full h-screen flex">
                                     <div class="m-auto">
                                         This store currently has no products
                                     </div>
