@@ -121,7 +121,7 @@ const ProductLayout:Component = () => {
                                     {selectedDataError().color !== '' ? selectedDataError().color : null}
                                 </p>
                             </div>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 flex-wrap">
                                 <For each={productData()?.colors}>{
                                     (c) => <div>
                                         <button
@@ -141,7 +141,7 @@ const ProductLayout:Component = () => {
                                     {selectedDataError().size !== '' ? selectedDataError().size : null}
                                 </p>
                             </div>
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 flex-wrap">
                                 <For each={productData()?.sizes}>{
                                     (s) => <div>
                                         <button
