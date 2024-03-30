@@ -50,7 +50,7 @@ render(() => (
 				<Route path="/influencers" component={Categories} />
 				<Route path="/ladies" component={Ladies} />
 				<Route path="/men" component={Men} />
-				<Route path="/children" component={Children} />
+				<Route path="/kids" component={Children} />
 				<Route path="/toddlers" component={Toddlers} />
 				<Route path="/contact" component={Contact} />
 				<Route path="/login" component={Login} />

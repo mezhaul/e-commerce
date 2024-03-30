@@ -20,7 +20,6 @@ const ProductsLayout: Component = () => {
             let doc_id = {"id": doc.id}
             let doc_data = doc.data();
             let new_data = Object.assign(doc_id,doc_data);
-            
             setProductsList((prv) => [...prv,new_data]);
         });
         setLoading(true);
@@ -30,7 +29,7 @@ const ProductsLayout: Component = () => {
         <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
             {loading() 
                 ?
-                    <div class="w-full flex flex-wrap">
+                    <div class="w-full flex flex-wrap gap-3 justify-center">
                     
                         {productsList().length > 0 
                             ?
@@ -38,8 +37,8 @@ const ProductsLayout: Component = () => {
                                     (d) => 
                                         <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6">
                                             <div class="w-full hover:shadow bg-white border border-gray-300">
-                                                <div class="w-full bg-gray-200 h-56">
-                                                    <img src={d.images[0]} alt={d.title} class="h-52 m-auto"/>
+                                                <div class="w-full bg-gray-200 overflow-hidden">
+                                                    <img src={d.images[0]} alt={d.title} class="w-full m-auto"/>
                                                 </div>
                                                 <div class="px-2 pb-2 border-t border-gray-200">
                                                     <h3 class="text-center text-md pt-2 pb-1 font-semibold">

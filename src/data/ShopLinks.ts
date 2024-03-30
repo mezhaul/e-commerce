@@ -11,8 +11,18 @@ const ShopLinks = [
     },
     {
         id: 3,
-        title: 'Children & Toddlers',
-        link: '/children'
+        title: 'Kids',
+        link: '/kids'
+    },
+    {
+        id: 4,
+        title: 'Toddlers',
+        link: '/toddlers'
+    },
+    {
+        id: 4,
+        title: 'Beauty',
+        link: '/beauty'
     },
     {
         id: 4,

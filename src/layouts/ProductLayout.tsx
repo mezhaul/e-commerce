@@ -97,7 +97,7 @@ const ProductLayout:Component = () => {
                 ?
                     <div class="w-full px-2 md:px-0 md:w-11/12 m-auto pt-16 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10">
                         <div class="w-full md:w-1/3 bg-gray-200 flex">
-                            <img src={productData()?.images[0]} alt={productData()?.title} class="h-96 m-auto" />
+                            <img src={productData()?.images[0]} alt={productData()?.title} class="w-full m-auto" />
                         </div>
                         <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-5">
                             <h1 class="text-2xl font-bold">{productData()?.name}</h1>
