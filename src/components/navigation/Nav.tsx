@@ -19,6 +19,11 @@ const Nav: Component = () => {
   const [profileMenu, setProfileMenu] = createSignal(false);
   const [shopMenu,setShopMenu] = createSignal(false);
   const {cart} = useCartContext();
+  const [menuOpen, setMenuOpen] = createSignal(false);
+
+  function toggleMenu() {
+	setMenuOpen(!menuOpen());
+  }
 
   const handleLogout = () => {
 	  logoutUser();
@@ -150,13 +155,34 @@ const Nav: Component = () => {
 				}
         	</div>
 
-			<button class="lg:hidden">
+			<button 
+				class="lg:hidden"
+          		onClick={toggleMenu}
+		  	>
 				<IoMenu class="text-3xl"/>
 			</button>
 
 		</div>
+		<div class="relative">
+        {menuOpen() && (
+          <div
+            class="fixed inset-0 bg-black opacity-50 z-40"
+            onClick={toggleMenu}
+          ></div>
+        )}
+
+        {/* Menu */}
+        <div
+          class={`fixed inset-y-0 right-0 z-50 w-72 bg-white shadow-lg transform transition-transform ${
+            menuOpen() ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div class="p-4">Menu Content</div>
+        </div>
+      </div>
     </nav>
   );
 };
 
 export default Nav;
+
