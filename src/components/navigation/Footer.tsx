@@ -5,7 +5,7 @@ import Logo from "../../assets/images/IMG_2282-removebg-preview.png"
 const Footer:Component = () => {
 	return (
 		<footer class="w-full bg-customColor py-16 border-t">
-			<div class="w-8/12 m-auto flex flex-wrap border-b border-gray-300 pb-12">
+			<div class="w-8/12 m-auto flex flex-wrap ld:flex-wrap lg:border-b border-gray-300 pb-12">
 				<div class="w-full lg:w-1/5">
 					<img src={Logo} alt="" class="w-28" />
 				</div>
@@ -59,7 +59,7 @@ const Footer:Component = () => {
 						</li>
 					</ul>
 				</div>
-				<div class="w-full">
+				<div class="w-full lg:w-1/5">
 					<h3 class="font-bold pb-3">Social Media</h3>
 					<ul class="flex gap-8">
 						<li>

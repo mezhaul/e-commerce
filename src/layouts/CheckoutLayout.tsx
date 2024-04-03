@@ -106,7 +106,7 @@ const CheckoutLayout:Component = () => {
             redirect: "follow"
         };
 
-        fetch("http://localhost:3000/api/payment", requestOptions)
+        fetch("https://mezhaul-bdz4sevbka-uc.a.run.app/api/payment", requestOptions)
         .then((response) => response.text())
         .then((result) => {
             const data = JSON.parse(result);

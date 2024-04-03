@@ -41,6 +41,11 @@ const Nav: Component = () => {
 	setProfileMenu(!profileMenu());
   }
 
+  const goToPage = (e: string) => {
+	navigate(e);
+	setMenuOpen(false);
+  }
+
   return (
     <nav class="w-full md:pt-3 fixed z-50">
       <div class="w-full px-4 lg:px-0 text-md md:w-11/12 m-auto relative flex rounded-sm justify-between bg-customColor h-14 items-center">
@@ -59,7 +64,7 @@ const Nav: Component = () => {
 											'bg-black text-white' 
 										: 
 											''
-									} relative cursor-pointer flex h-14 w-28 duration-300 ease-in-out`} onMouseEnter={toggleShopMenu}>
+									} relative cursor-pointer flex h-14 w-28 duration-300 ease-in-out`} onClick={toggleShopMenu}>
 									<p class="m-auto">
 										{l.title}
 									</p>
@@ -173,13 +178,61 @@ const Nav: Component = () => {
 
         {/* Menu */}
         <div
-          class={`fixed inset-y-0 right-0 z-50 w-72 bg-white shadow-lg transform transition-transform ${
+          class={`fixed inset-y-0 right-0 z-50 w-72 bg-customColor shadow-lg transform transition-transform ${
             menuOpen() ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div class="p-4">Menu Content</div>
+          <div class="py-4">
+			<ul class="flex flex-col gap-2 z-50">
+					<For each={Data}>{(l) => (
+						<>
+							{l.link === '/shops'
+								?
+									<li class="w-full flex py-2 justify-between">
+										<p>
+											{l.title}
+										</p>
+										<p>
+											Down
+										</p>
+									</li>
+								:
+									<button class="w-full py-2" onclick={() => goToPage(l.link)}>
+										<p>
+											{l.title}
+										</p>
+									</button>
+							}
+						</>
+					)}</For>
+				</ul>
+		  </div>
         </div>
       </div>
+	  <div class="fixed bottom-0 py-3 bg-customColor w-full flex md:hidden border-t border-gray-300">
+		  <div class="w-1/4 flex">
+				<button onClick={() => navigate('/whishlist')} class="m-auto">
+					<HiOutlineHeart class="text-2xl" />
+				</button>
+		  </div>
+		  <div class="w-1/4 flex">
+				<button onClick={() => navigate('/notification')} class="m-auto">
+					<HiOutlineBell class="text-2xl" />
+				</button>
+          </div>
+		  <div class="w-1/4 flex">
+				<button onClick={() => navigate('/cart')} class="m-auto">
+					<IoCartOutline class="text-2xl" />
+					{cart().length > 0 
+						?
+							<Ping />
+						:
+							null 
+					}
+				</button>
+		  </div>
+		  <div class="w-1/4 flex"></div>
+	  </div>
     </nav>
   );
 };

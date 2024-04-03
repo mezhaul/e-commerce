@@ -39,7 +39,10 @@ const CartLayout:Component = () => {
             <div class="w-full relative md:w-2/3 m-auto p-5 h-[87vh] bg-customColor border rounded-sm">
                 <div class="w-full flex justify-between">
                     <h1 class="text-2xl font-semibold">Cart Items</h1>
-                    <button class="bg-sky-500 border border-sky-600 hover:bg-sky-600 text-sm h-8 px-5 text-white rounded-sm">
+                    <button
+                        onClick={() => navigate('/shops')} 
+                        class="bg-sky-500 border border-sky-600 hover:bg-sky-600 text-sm h-8 px-5 text-white rounded-sm"
+                    >
                         Continue Shopping
                     </button>
                 </div>
