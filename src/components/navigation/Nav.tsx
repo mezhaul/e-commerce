@@ -1,6 +1,6 @@
 import { Component, For, createSignal } from "solid-js";
 import Data from '../../data/Data';
-import { IoCartOutline, IoMenu } from "solid-icons/io";
+import { IoArrowDownSharp, IoCartOutline, IoChevronBack, IoChevronDown, IoChevronUp, IoMenu, IoPersonCircle, IoPersonCircleOutline } from "solid-icons/io";
 import { HiOutlineBell, HiOutlineHeart } from "solid-icons/hi";
 import Logo from '../../assets/images/IMG_2282-removebg-preview.png'
 import { useAuthContext } from "../../context/AuthContext";
@@ -18,6 +18,7 @@ const Nav: Component = () => {
   const { logoutUser } = useLogout();
   const [profileMenu, setProfileMenu] = createSignal(false);
   const [shopMenu,setShopMenu] = createSignal(false);
+  const [shopMobileMenu,setShopMobileMenu] = createSignal(false);
   const {cart} = useCartContext();
   const [menuOpen, setMenuOpen] = createSignal(false);
 
@@ -44,6 +45,9 @@ const Nav: Component = () => {
   const goToPage = (e: string) => {
 	navigate(e);
 	setMenuOpen(false);
+	if(shopMobileMenu()){
+		setShopMobileMenu(false);
+	}
   }
 
   return (
@@ -188,13 +192,28 @@ const Nav: Component = () => {
 						<>
 							{l.link === '/shops'
 								?
-									<li class="w-full flex py-2 justify-between">
-										<p>
-											{l.title}
-										</p>
-										<p>
-											Down
-										</p>
+									<li class="w-full py-2">
+										<div class="justify-center flex gap-3 relative items-center">
+											<p>
+												{l.title}
+											</p>
+											<button onClick={() => setShopMobileMenu(!shopMobileMenu())}>
+												{
+													shopMobileMenu() 
+														?
+															<IoChevronUp />
+														:
+															<IoChevronDown />
+												}
+											</button>
+										</div>
+										<div class={shopMobileMenu() ? "block py-3" : " hidden w-full"}>
+											<For each={ShopLinks}>{
+												(i) => <button class="w-full py-2" onclick={() => goToPage(i.link)}>
+														{i.title}
+													</button>
+											}</For>
+										</div>
 									</li>
 								:
 									<button class="w-full py-2" onclick={() => goToPage(l.link)}>
@@ -212,17 +231,17 @@ const Nav: Component = () => {
 	  <div class="fixed bottom-0 py-3 bg-customColor w-full flex md:hidden border-t border-gray-300">
 		  <div class="w-1/4 flex">
 				<button onClick={() => navigate('/whishlist')} class="m-auto">
-					<HiOutlineHeart class="text-2xl" />
+					<HiOutlineHeart class="text-3xl" />
 				</button>
 		  </div>
 		  <div class="w-1/4 flex">
 				<button onClick={() => navigate('/notification')} class="m-auto">
-					<HiOutlineBell class="text-2xl" />
+					<HiOutlineBell class="text-3xl" />
 				</button>
           </div>
 		  <div class="w-1/4 flex">
 				<button onClick={() => navigate('/cart')} class="m-auto">
-					<IoCartOutline class="text-2xl" />
+					<IoCartOutline class="text-3xl" />
 					{cart().length > 0 
 						?
 							<Ping />
@@ -231,7 +250,14 @@ const Nav: Component = () => {
 					}
 				</button>
 		  </div>
-		  <div class="w-1/4 flex"></div>
+		  <div class="w-1/4 flex">
+		  	<button
+				class="m-auto"
+				onClick={toggleProfileMenu}
+			>
+				<IoPersonCircleOutline class="text-3xl" />
+			</button>
+		  </div>
 	  </div>
     </nav>
   );

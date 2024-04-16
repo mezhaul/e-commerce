@@ -4,11 +4,13 @@ import { useParams } from "@solidjs/router"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../firebase/config"
 import LoadingScreen from "../components/general/LoadingScreen"
+import NoProducts from "../components/general/NoProducts"
 
 const ProductsLayout: Component = () => {
     const [productsList,setProductsList] = createSignal<any[]>([]);
     const [loading, setLoading] = createSignal(false);
     const {id} = useParams();
+    
     createEffect(() => {
         getListOfProducts(id);
     });
@@ -52,11 +54,7 @@ const ProductsLayout: Component = () => {
                                         </a>
                                 }</For>
                             :
-                                <div class="w-full h-screen flex">
-                                    <div class="m-auto">
-                                        This store currently has no products
-                                    </div>
-                                </div>
+                                <NoProducts />
                         }
                     </div>
                 :

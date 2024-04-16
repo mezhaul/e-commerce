@@ -7,7 +7,7 @@ const Footer:Component = () => {
 		<footer class="w-full bg-customColor py-16 border-t">
 			<div class="w-8/12 m-auto flex flex-wrap ld:flex-wrap lg:border-b border-gray-300 pb-12">
 				<div class="w-full lg:w-1/5">
-					<img src={Logo} alt="" class="w-28" />
+					<img src={Logo} alt="" class="w-28 m-auto md:-m-0" />
 				</div>
 				<div class="w-1/2 lg:w-1/5">
 					<h3 class="font-bold pb-3">Site</h3>
@@ -39,7 +39,7 @@ const Footer:Component = () => {
 						</li>
 					</ul>
 				</div>
-				<div class="w-1/2 lg:w-1/5">
+				<div class="w-1/2 lg:w-1/5 pt-5 md:pt-0">
 					<h3 class="font-bold pb-3">Policies</h3>
 					<ul>
 						<li>
@@ -59,9 +59,9 @@ const Footer:Component = () => {
 						</li>
 					</ul>
 				</div>
-				<div class="w-full lg:w-1/5">
-					<h3 class="font-bold pb-3">Social Media</h3>
-					<ul class="flex gap-8">
+				<div class="w-full lg:w-1/5 pt-5 md:pt-0">
+					<h3 class="font-bold pb-5">Social Media</h3>
+					<ul class="flex md:gap-10 justify-between md:justify-normal">
 						<li>
 							<RiLogosFacebookCircleLine class="text-2xl"/>
 						</li>

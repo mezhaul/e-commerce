@@ -2,6 +2,8 @@ import { Component, For, createEffect, createSignal } from "solid-js"
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import LoadingScreen from "../../components/general/LoadingScreen";
+import { IoBag } from "solid-icons/io";
+import NoProducts from "../../components/general/NoProducts";
 
 
 const Men:Component = () => {
@@ -21,7 +23,6 @@ const Men:Component = () => {
             const doc_data = doc.data()
             const new_data = Object.assign(doc_id,doc_data);
             setListOfMenProducts((prv) => ([...prv,new_data]));
-            console.log(new_data);
         });
         setLoading(true);
     }
@@ -54,11 +55,7 @@ const Men:Component = () => {
                                 </For>
                             )
                             : (
-                                <div class="w-full h-screen flex">
-                                    <div class="m-auto">
-                                        This store currently has no products
-                                    </div>
-                                </div>
+                                <NoProducts />
                             )
                         }
                     </div>

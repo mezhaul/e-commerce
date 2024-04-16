@@ -2,6 +2,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { For, createEffect, createSignal } from "solid-js";
 import { db } from "../../firebase/config";
 import LoadingScreen from "../../components/general/LoadingScreen";
+import NoProducts from "../../components/general/NoProducts";
 
 const Beauty = () => {
     const [listOfLadiesProducts, setListOfLadiesProducts] = createSignal<any[]>([]);
@@ -55,11 +56,7 @@ const Beauty = () => {
                                 </For>
                             )
                             : (
-                                <div class="w-full h-screen flex">
-                                    <div class="m-auto">
-                                        This store currently has no products
-                                    </div>
-                                </div>
+                                <NoProducts />
                             )
                         }
                     </div>
