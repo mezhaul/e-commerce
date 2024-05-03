@@ -5,7 +5,7 @@ name: Deploy to Firebase Hosting on merge
 on:
   push:
     branches:
-      - main'
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -18,5 +18,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEZHAUL_409D1 }}
           channelId: live
           projectId: mezhaul-409d1
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
