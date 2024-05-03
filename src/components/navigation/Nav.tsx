@@ -1,6 +1,6 @@
 import { Component, For, createSignal } from "solid-js";
 import Data from '../../data/Data';
-import { IoArrowDownSharp, IoCartOutline, IoChevronBack, IoChevronDown, IoChevronUp, IoMenu, IoPersonCircle, IoPersonCircleOutline } from "solid-icons/io";
+import { IoCartOutline, IoChevronDown, IoChevronUp, IoMenu, IoPersonCircleOutline } from "solid-icons/io";
 import { HiOutlineBell, HiOutlineHeart } from "solid-icons/hi";
 import Logo from '../../assets/images/IMG_2282-removebg-preview.png'
 import { useAuthContext } from "../../context/AuthContext";
@@ -60,13 +60,13 @@ const Nav: Component = () => {
 						{l.link === '/shops'
 							?
 								<li class={`
-									${location.pathname === '/shops' || 
-									location.pathname === '/children' || 
-									location.pathname === '/ladies' || 
+									${location.pathname === '/shops' ||
+									location.pathname === '/children' ||
+									location.pathname === '/ladies' ||
 									location.pathname === '/men'
-										? 
-											'bg-black text-white' 
-										: 
+										?
+											'bg-black text-white'
+										:
 											''
 									} relative cursor-pointer flex h-14 w-28 duration-300 ease-in-out`} onClick={toggleShopMenu}>
 									<p class="m-auto">
@@ -112,11 +112,11 @@ const Nav: Component = () => {
 				</button>
 				<button onClick={() => navigate('/cart')} class="relative">
 					<IoCartOutline class="text-2xl" />
-					{cart().length > 0 
+					{cart().length > 0
 						?
 							<Ping />
 						:
-							null 
+							null
 					}
 				</button>
 				{isAuth()
@@ -148,13 +148,13 @@ const Nav: Component = () => {
 						</>
 					:
 						< div class="flex gap-2">
-							<button 
+							<button
 								onClick={() => navigate('/login')}
 								class={`${location.pathname === '/login' ? ' bg-black text-white' : null} w-24 h-14 rounded-r-sm duration-300`}
 							>
 								Login
 							</button>
-							<button 
+							<button
 								onClick={() => navigate('/register')}
 								class={`${location.pathname === '/register' ? ' bg-black text-white' : null} w-24 h-14 rounded-r-sm duration-300`}
 							>
@@ -164,7 +164,7 @@ const Nav: Component = () => {
 				}
         	</div>
 
-			<button 
+			<button
 				class="lg:hidden"
           		onClick={toggleMenu}
 		  	>
@@ -199,7 +199,7 @@ const Nav: Component = () => {
 											</p>
 											<button onClick={() => setShopMobileMenu(!shopMobileMenu())}>
 												{
-													shopMobileMenu() 
+													shopMobileMenu()
 														?
 															<IoChevronUp />
 														:
@@ -242,11 +242,11 @@ const Nav: Component = () => {
 		  <div class="w-1/4 flex">
 				<button onClick={() => navigate('/cart')} class="m-auto">
 					<IoCartOutline class="text-3xl" />
-					{cart().length > 0 
+					{cart().length > 0
 						?
 							<Ping />
 						:
-							null 
+							null
 					}
 				</button>
 		  </div>
