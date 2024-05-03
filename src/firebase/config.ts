@@ -6,13 +6,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBfguZ7K40vp0Svw5R4pT-S0EpJ7Ws2Zpg",
-  authDomain: "mezhaul-32f36.firebaseapp.com",
-  projectId: "mezhaul-32f36",
-  storageBucket: "mezhaul-32f36.appspot.com",
-  messagingSenderId: "782408261445",
-  appId: "1:782408261445:web:9bcaa45aff687508d4282c",
-  measurementId: "G-ECYE9DMPEG"
+  apiKey: "AIzaSyDZughKMLZg9BCjLVnjfi8q0JDlRZhFhDg",
+  authDomain: "mezhaul-409d1.firebaseapp.com",
+  projectId: "mezhaul-409d1",
+  storageBucket: "mezhaul-409d1.appspot.com",
+  messagingSenderId: "38113557519",
+  appId: "1:38113557519:web:4d463bba151b9e2752f77a",
+  measurementId: "G-FZQL2MQFCS"
 };
 
 const app = initializeApp(firebaseConfig);

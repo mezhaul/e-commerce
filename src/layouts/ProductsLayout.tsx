@@ -29,15 +29,15 @@ const ProductsLayout: Component = () => {
 
     return (
         <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
-            {loading() 
+            {loading()
                 ?
-                    <div class="w-full flex flex-wrap gap-[9.5px]">
-                    
-                        {productsList().length > 0 
+                    <div class="w-full flex flex-wrap gap-[9.5px] xl:gap-[10px]">
+
+                        {productsList().length > 0
                             ?
                                 <For each={productsList()}>{
-                                    (d) => 
-                                        <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6 max-w-56">
+                                    (d) =>
+                                        <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6 max-w-56 xl:max-w-[231.5px]">
                                             <div class="w-full hover:shadow bg-white border border-gray-300">
                                                 <div class="w-full h-72 overflow-hidden bg-gray-200">
                                                     <img src={d.images[0]} alt={d.title} class=" m-auto"/>
