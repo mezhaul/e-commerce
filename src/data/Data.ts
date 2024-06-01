@@ -9,11 +9,11 @@ const Data = [
 		title: 'Shop',
 		link: '/shops',
 	},
-	{
-		id:2,
-		title: 'Influencers',
-		link: '/influencers',
-	},
+	// {
+	// 	id:2,
+	// 	title: 'Influencers',
+	// 	link: '/influencers',
+	// },
 	{
 		id:3,
 		title: 'Contact',

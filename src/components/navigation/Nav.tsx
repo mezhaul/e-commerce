@@ -2,7 +2,7 @@ import { Component, For, createSignal } from "solid-js";
 import Data from '../../data/Data';
 import { IoCartOutline, IoChevronDown, IoChevronUp, IoMenu, IoPersonCircleOutline } from "solid-icons/io";
 import { HiOutlineBell, HiOutlineHeart } from "solid-icons/hi";
-import Logo from '../../assets/images/IMG_2282-removebg-preview.png'
+import Logo from '../../assets/images/white-logo.png'
 import { useAuthContext } from "../../context/AuthContext";
 import useLogout from "../../hooks/userLogout"
 import { useNavigate, useLocation } from "@solidjs/router";
@@ -52,7 +52,7 @@ const Nav: Component = () => {
 
   return (
     <nav class="w-full md:pt-3 fixed z-50">
-      <div class="w-full px-4 lg:px-0 text-md md:w-11/12 m-auto relative flex rounded-sm justify-between bg-customColor h-14 items-center">
+      <div class="w-full px-4 lg:px-0 text-md md:w-11/12 m-auto relative text-white flex rounded-sm justify-between bg-black h-14 items-center">
 
 			<ul class="lg:flex gap-1 hidden z-50">
           		<For each={Data}>{(l) => (
