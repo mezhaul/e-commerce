@@ -32,27 +32,22 @@ const Footer:Component = () => {
 				<div class="w-1/2 lg:w-1/5">
 					<h3 class="font-bold pb-3">More</h3>
 					<ul>
-						<li>
-							
-						</li>
+						<a href="/faqs">
+							FAQ
+						</a>
 					</ul>
 				</div>
 				<div class="w-1/2 lg:w-1/5 pt-5 md:pt-0">
 					<h3 class="font-bold pb-3">Policies</h3>
 					<ul>
 						<li>
-							<a href="/store_policy">
-								Store Policy
+							<a href="/terms_of_service">
+								Terms of Service
 							</a>
 						</li>
 						<li>
-							<a href="/shipping_returns">
-								Shipping & Returns
-							</a>
-						</li>
-						<li>
-							<a href="/faq">
-								FAQ
+							<a href="/privacy_policy">
+								Privacy Policy
 							</a>
 						</li>
 					</ul>

@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import Banner from '../../../assets/images/bottom-banner.png'
+import Banner from '../../../assets/images/Bottom_Banner.jpg'
 
 
 const HomeBanner: Component = () => {

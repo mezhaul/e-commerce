@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import Woman2 from '../../assets/images/first-banner.png'
+import Woman2 from '../../assets/images/Top_Banner_1.jpg'
 
 const Hero: Component = () => {
   return (

@@ -40,6 +40,9 @@ import Hair from './pages/public/Hair'
 import Accessories from './pages/public/Accessories'
 import Flowers from './pages/public/Flowers'
 import Clothes from './pages/public/Clothes'
+import TermsOfService from './pages/public/TermsOfService'
+import Faq from './pages/public/Faq'
+import PrivacyPolicy from './pages/public/PrivacyPolicy'
 
 
 const root = document.getElementById('root')
@@ -58,6 +61,9 @@ render(() => (
 				<Route path="/shop/:id" component={Products} />
 				<Route path="/product/:id" component={Product} />
 				<Route path="/influencers" component={Categories} />
+				<Route path="/terms_of_service" component={TermsOfService} />
+				<Route path="/privacy_policy" component={PrivacyPolicy} />
+				<Route path="/faqs" component={Faq} />
 				<Route path="/ladies" component={Ladies} />
 				<Route path="/men" component={Men} />
 				<Route path="/kids" component={Children} />
