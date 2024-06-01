@@ -153,7 +153,7 @@ const Register:Component = () => {
                         onChange={errorHandling}
                         class="w-full border h-10 rounded-sm border-gray-300 px-2" 
                     />
-                    <button onClick={onSubmit} class="w-full my-5 bg-black text-white h-10 rounded-sm">{loading() ? <div class="loader m-auto "></div> : 'Register'}</button>
+                    <button onClick={onSubmit} class="w-full my-5 bg-black text-white h-10 rounded-sm">{loading() ? <div class="loaderSmall m-auto "></div> : 'Register'}</button>
                     <div class="flex justify-between">
                         <p>
                             Already register 
