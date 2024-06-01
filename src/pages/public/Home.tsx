@@ -20,6 +20,7 @@ const Home:Component = () => {
             let doc_id = {"id":doc.id}
             let doc_data = doc.data();
             let new_data = Object.assign(doc_id,doc_data);
+			console.log(new_data);
             setShopList((prv) => [...prv,new_data]);
         });
 		setLoading(true);
@@ -31,7 +32,7 @@ const Home:Component = () => {
 				?
 					<>
 						<Hero />
-						{shopList().length > 4 && <Carousel shopLinks={shopList()} />}
+						{shopList().length > 0 && <Carousel shopLinks={shopList()} />}
 						<HomeBanner />
 					</>
 				:
