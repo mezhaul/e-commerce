@@ -24,17 +24,17 @@ const Carousel: Component<CarouselProps> = (props) => {
     };
 
     return (
-        <div class="w-full py-16">
-            <div class="w-10/12 m-auto flex relative">
+        <div class="w-full py-10 md:py-16 relative">
+            <div class="w-10/12 m-auto flex">
                 {shopLinks.length > 0 ? (
                     <SliderProvider>
                         <Slider options={options}>
-                            <For each={shopLinks}>{(s) => <a href={`/shop/${s.id}`}><img src={s.image} alt={s.name} /></a>}</For>
+                            <For each={shopLinks}>{(s) => <a href={`/shop/${s.id}`} class="flex justify-center"><img src={s.image} alt={s.name} class="h-40 md:h-auto"/></a>}</For>
                         </Slider>
-                        <SliderButton prev class="absolute -left-14 h-full">
+                        <SliderButton prev class="absolute left-0 md:left-14 h-full top-0">
                             <RiArrowsArrowLeftSLine class="text-7xl" />
                         </SliderButton>
-                        <SliderButton next class="absolute -right-14 h-full">
+                        <SliderButton next class="absolute right-0 md:right-14 h-full top-0">
                             <RiArrowsArrowRightSLine class="text-7xl" />
                         </SliderButton>
                     </SliderProvider>
