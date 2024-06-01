@@ -129,11 +129,11 @@ const Nav: Component = () => {
 								>
 									M
 								</button>
-								<div class={`${profileMenu() ? "flex" : "hidden" }  -left-20 absolute w-[188px]  bg-customColor top-11`}>
-									<ul class="text-black w-full">
+								<div class={`${profileMenu() ? "flex" : "hidden" }  -left-20 absolute w-[188px]  bg-black text-white top-11`}>
+									<ul class=" w-full">
 										<For each={Links}>{
 											(l) => <a href={l.link}>
-													<li class="p-2 hover:bg-gray-300 px-5">{l.title}</li>
+													<li class="p-2 hover:bg-white hover:text-black px-5">{l.title}</li>
 												</a>
 										}</For>
 									</ul>

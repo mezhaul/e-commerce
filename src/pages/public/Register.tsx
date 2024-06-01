@@ -84,7 +84,7 @@ const Register:Component = () => {
                 setUserId(result.uid);
                 setUserEmail(data.email);
                 setLoading(false);
-                navigate('/personal_details')
+                navigate('/profile')
             }
         } catch (error) {
             alert('Email name already exists')
