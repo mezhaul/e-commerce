@@ -36,6 +36,10 @@ import Checkout from './pages/public/Checkout'
 import Success from './pages/public/Success'
 import Cancel from './pages/public/Cancel'
 import Beauty from './pages/public/Beauty'
+import Hair from './pages/public/Hair'
+import Accessories from './pages/public/Accessories'
+import Flowers from './pages/public/Flowers'
+import Clothes from './pages/public/Clothes'
 
 
 const root = document.getElementById('root')
@@ -46,6 +50,10 @@ render(() => (
 			<Router root={App}>
 				<Route path="/" component={Home} />
 				<Route path="/beauty" component={Beauty} />
+				<Route path="/hair" component={Hair} />
+				<Route path="/accessories" component={Accessories} />
+				<Route path="/clothes" component={Clothes} />
+				<Route path="/flowers" component={Flowers} />
 				<Route path="/shops" component={Shops} />
 				<Route path="/shop/:id" component={Products} />
 				<Route path="/product/:id" component={Product} />

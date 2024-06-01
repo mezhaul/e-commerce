@@ -72,10 +72,10 @@ const Nav: Component = () => {
 									<p class="m-auto">
 										{l.title}
 									</p>
-									<div class={`${shopMenu() ? 'flex' : 'hidden'} w-52 bg-customColor border-r -ml-12 z-10 mt-[15.8px] left-0 absolute top-10`} onMouseLeave={closeShopMenu}>
+									<div class={`${shopMenu() ? 'flex' : 'hidden'} w-52 bg-black border-r -ml-12 z-10 mt-[15.8px] left-0 absolute top-10`} onMouseLeave={closeShopMenu}>
 										<ul>
 											<For each={ShopLinks}>{
-												(s) => <button class="p-2 hover:bg-slate-100 w-full text-black" onclick={() => navigate(s.link)}>
+												(s) => <button class="p-2 hover:bg-slate-100 w-full text-white hover:text-black" onclick={() => navigate(s.link)}>
 													{s.title}
 												</button>
 											}</For>

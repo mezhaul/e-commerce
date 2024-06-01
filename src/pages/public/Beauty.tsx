@@ -46,9 +46,6 @@ const Beauty = () => {
                                                     <h3 class="text-center text-md pt-2 pb-1 font-semibold line-clamp-1">
                                                         {d.name}
                                                     </h3>
-                                                    <p class="text-sm text-center font-medium line-clamp-1">
-                                                        {d.summary}
-                                                    </p>
                                                 </div>
                                             </div>
                                         </a>

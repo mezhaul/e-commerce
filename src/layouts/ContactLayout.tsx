@@ -70,7 +70,7 @@ const ContactLayout:Component = () => {
 
     return (
         <div class="w-full m-auto pt-20 flex gap-5">
-            <div class="w-11/12 lg:w-1/2 m-auto bg-customColor p-5 rounded-sm border">
+            <div class="w-11/12 lg:w-1/2 m-auto  p-5">
                 <h1 class="text-3xl pb-5">Contact us</h1>
                 <div class="text-md flex flex-col gap-3">
                     <div class="flex gap-3">
