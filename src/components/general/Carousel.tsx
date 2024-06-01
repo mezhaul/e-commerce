@@ -14,7 +14,7 @@ const Carousel: Component<CarouselProps> = (props) => {
         loop: true,
         breakpoints: {
             "(min-width: 400px)": {
-                slides: { perView: 2, spacing: 5 },
+                slides: { perView: 2, spacing: 2 },
             },
             "(min-width: 1000px)": {
                 slides: { perView: 5, spacing: 30 },
