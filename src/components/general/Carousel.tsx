@@ -29,7 +29,7 @@ const Carousel: Component<CarouselProps> = (props) => {
                 {shopLinks.length > 0 ? (
                     <SliderProvider>
                         <Slider options={options}>
-                            <For each={shopLinks}>{(s) => <a href={`/shop/${s.id}`} class="flex justify-center w-full bg-red-500"><img src={s.image} alt={s.name} class="h-40 md:h-auto"/></a>}</For>
+                            <For each={shopLinks}>{(s) => <a href={`/shop/${s.id}`} class="flex justify-center w-full"><img src={s.image} alt={s.name} class="h-32 md:h-auto"/></a>}</For>
                         </Slider>
                         <SliderButton prev class="absolute left-0 md:left-14 h-full top-0">
                             <RiArrowsArrowLeftSLine class="text-7xl" />
