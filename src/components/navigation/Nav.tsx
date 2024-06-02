@@ -223,35 +223,35 @@ const Nav: Component = () => {
 											{l.title}
 										</p>
 									</button>
-									<button class="w-full py-2" onclick={() => goToPage('/faqs')}>
-										<p>
-											FAQ's
-										</p>
-									</button>
-									<button class="w-full py-2" onclick={() => goToPage('/terms_of_service')}>
-										<p>
-											Terms of Service
-										</p>
-									</button>
-									<button class="w-full py-2" onclick={() => goToPage('/privacy_policy')}>
-										<p>
-											Privacy Policy
-										</p>
-									</button>
 									</>
 							}
 						</>
 					)}</For>
+					<button class="w-full py-2" onclick={() => goToPage('/faqs')}>
+						<p>
+							FAQ's
+						</p>
+					</button>
+					<button class="w-full py-2" onclick={() => goToPage('/terms_of_service')}>
+						<p>
+							Terms of Service
+						</p>
+					</button>
+					<button class="w-full py-2" onclick={() => goToPage('/privacy_policy')}>
+						<p>
+							Privacy Policy
+						</p>
+					</button>
 				</ul>
 		  </div>
-			<div class="absolute bottom-0 w-full flex flex-wrap p-4">
-				<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={() => goToPage('/login')}>
-					Login
-				</button>
-				<button class="w-full border border-white h-10 rounded-sm" onclick={() => goToPage('/register')}>
-					Register
-				</button>
-			</div>
+		<div class="absolute bottom-0 w-full flex flex-wrap p-4">
+			<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={() => goToPage('/login')}>
+				Login
+			</button>
+			<button class="w-full border border-white h-10 rounded-sm" onclick={() => goToPage('/register')}>
+				Register
+			</button>
+		</div>
         </div>
       </div>
 	  <div class="fixed bottom-0 py-3 bg-black w-full flex md:hidden border-t text-white border-gray-300">
