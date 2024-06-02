@@ -79,7 +79,7 @@ const Login:Component = () => {
             <div class="hidden md:flex w-1/2 h-full bg-gray-100" style={{"background-image":`url(${Woman})`,"background-size":"cover","background-position-y":"-300px;"}}></div>
             <div class="w-full md:w-1/2 h-full flex">
                 <div class="w-10/12 max-w-[450px] m-auto gap-3 flex-col">
-                    <h1 class="text-2xl text-center underline">
+                    <h1 class="text-2xl text-center">
                         Login
                     </h1>
                     <div class="w-full flex flex-col gap-3 py-3">

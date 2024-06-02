@@ -100,7 +100,7 @@ const Register:Component = () => {
             <div class="hidden md:flex w-1/2 h-full bg-gray-100 border-r" style={{"background-image":`url(${Woman})`,"background-size":"cover"}}></div>
             <div class="w-full md:w-1/2 h-full flex">
                 <div class="w-10/12 max-w-[450px] m-auto flex-col">
-                    <h1 class="text-2xl text-center underline">
+                    <h1 class="text-2xl text-center">
                         Register
                     </h1>
                     <div class="py-2">
