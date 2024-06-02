@@ -39,7 +39,7 @@ const Accessories = () => {
                                     {(d) => 
                                         <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6 max-w-56 p-1 md:p-0">
                                             <div class="w-full hover:shadow bg-white border border-gray-300">
-                                                <div class="w-full h-40 md:h-72 overflow-hidden bg-gray-200">
+                                                <div class="w-full h-48 md:h-72 overflow-hidden bg-gray-200">
                                                     <img src={d.images[0]} alt={d.title} class=" m-auto"/>
                                                 </div>
                                                 <div class="px-2 pb-2 border-t border-gray-200">
