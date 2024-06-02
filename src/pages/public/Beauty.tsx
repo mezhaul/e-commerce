@@ -29,7 +29,7 @@ const Beauty = () => {
     };
 
     return (
-        <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
+        <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex md:gap-5 py-10 mb:pb-10">
             {loading() 
                 ? (
                     <div class="w-full flex flex-wrap gap-[9.5px]">

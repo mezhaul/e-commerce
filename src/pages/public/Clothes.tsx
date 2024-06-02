@@ -1,7 +1,7 @@
 import { Component } from "solid-js";
 import LadiesImg from "../../assets/images/Ladies_Clothes_Category.jpg"
 import MenImg from "../../assets/images/Ladies_Clothes_Category.jpg"
-import ChildrenImg from "../../assets/images/Kids_Clothing_Category.jpg"
+import ChildrenImg from "../../assets/images/child.jpg"
 import ToddlersImg from "../../assets/images/Ladies_Clothes_Category.jpg"
 
 

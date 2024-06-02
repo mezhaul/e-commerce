@@ -10,6 +10,7 @@ import ShopLinks from "../../data/ShopLinks";
 import Links from "../../data/Links";
 import Ping from "../general/Ping";
 import { useCartContext } from "../../context/CartContext";
+import Ping2 from "../general/Ping2";
 
 const Nav: Component = () => {
   const navigate = useNavigate();
@@ -228,7 +229,7 @@ const Nav: Component = () => {
 		  </div>
         </div>
       </div>
-	  <div class="fixed bottom-0 py-3 bg-customColor w-full flex md:hidden border-t border-gray-300">
+	  <div class="fixed bottom-0 py-3 bg-black w-full flex md:hidden border-t text-white border-gray-300">
 		  <div class="w-1/4 flex">
 				<button onClick={() => navigate('/whishlist')} class="m-auto">
 					<HiOutlineHeart class="text-3xl" />
@@ -244,7 +245,7 @@ const Nav: Component = () => {
 					<IoCartOutline class="text-3xl" />
 					{cart().length > 0
 						?
-							<Ping />
+							<Ping2 />
 						:
 							null
 					}

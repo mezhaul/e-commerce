@@ -49,7 +49,7 @@ const Register:Component = () => {
             email === '' || 
             password === '' || 
             repassword === '' || 
-            password !== 
+            password.length < 6 ||
             repassword
         ){
             if(name === '') {
@@ -60,6 +60,8 @@ const Register:Component = () => {
             }
             if(password === '') {
                 setDataError((prv) => ({...prv,'password': 'Password is a required field!'}))
+            } else if (password.length < 6) {
+                setDataError((prv) => ({...prv,'password': 'Password length cannot be less than 6 characters!'}))
             }
             if(repassword === '') {
                 setDataError((prv) => ({...prv,'repassword': 'Confirm password is a required field!'}))

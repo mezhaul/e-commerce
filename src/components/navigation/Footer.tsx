@@ -4,7 +4,7 @@ import Logo from "../../assets/images/white-logo.png"
 
 const Footer:Component = () => {
 	return (
-		<footer class="w-full bg-black py-16">
+		<footer class="hidden md:block w-full bg-black py-16">
 			<div class="w-8/12 m-auto flex flex-wrap ld:flex-wrap lg:border-b border-gray-300 pb-12 text-white">
 				<div class="w-full lg:w-1/5">
 					<img src={Logo} alt="" class="w-28 m-auto md:-m-0" />
