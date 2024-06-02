@@ -28,16 +28,19 @@ const Home:Component = () => {
 
 	return (
 		<>
-			{loading()
-				?
-					<>
-						<Hero />
-						{shopList().length > 0 && <Carousel shopLinks={shopList()} />}
-						<HomeBanner />
-					</>
-				:
-					<LoadingScreen />
-			}
+		<Hero />
+			<div class='h-56'>
+				{loading()
+					?
+						<>
+							{shopList().length > 0 && <Carousel shopLinks={shopList()} />}
+						</>
+							
+					:
+						<LoadingScreen />
+				}
+			</div>
+			<HomeBanner />
 		</>
 	)
 }
