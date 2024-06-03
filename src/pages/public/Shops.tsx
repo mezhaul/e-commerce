@@ -26,12 +26,12 @@ const Shops:Component = () => {
 		<>
 			{loading() 
 				?
-					<div class='w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex justify-center flex-wrap md:gap-[9.5px] py-10 pb-16 mb:pb-10'>
+					<div class='w-full md:w-11/12 m-auto px-2 md:px-0 lg:pt-20 flex justify-center flex-wrap md:gap-[9.5px] pt-7 pb-16 mb:pb-10'>
 						<For each={storeData()}>{
 							(s) =>
 								<div class='w-1/2 lg:w-1/6 max-w-56 p-1 md:p-0'>
 									<a href={`/shop/${s.id}`}>
-										<img src={s?.image} alt={s?.name} class='h-40 pb-2 md:h-56 shadow m-auto'/>
+										<img src={s?.image} alt={s?.name} class='h-40 pb-2 md:h-56 m-auto'/>
 									</a>
 								</div>
 						}</For>
