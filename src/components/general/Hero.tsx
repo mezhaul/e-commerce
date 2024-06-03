@@ -1,5 +1,5 @@
 import { Component } from 'solid-js';
-import BannerTop1 from '../../assets/images/Top_Banner_1.jpg'
+import BannerTop1 from '../../assets/images/banner-van.png'
 
 const Hero: Component = () => {
   return (
