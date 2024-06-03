@@ -10,7 +10,6 @@ import './index.css'
 
 /* This the public side page */
 import Home from './pages/public/Home'
-import Shops from './pages/public/Shops'
 import NotFound from './pages/Notfound'
 import Categories from './pages/public/Categories'
 import Contact from './pages/public/Contact'
