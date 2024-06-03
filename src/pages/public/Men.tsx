@@ -26,7 +26,10 @@ const Men:Component = () => {
         setLoading(true);
     }
 
-    console.log(listOfMenProducts());
+    const getPrice = (e: string) => {
+        const convertNum = Number(e).toFixed(2);
+        return convertNum
+    } 
 
     return (
         <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
@@ -46,6 +49,11 @@ const Men:Component = () => {
                                                     <h3 class="text-center text-md pt-2 pb-1 font-semibold line-clamp-1">
                                                         {d.name}
                                                     </h3>
+                                                    <div class="w-full justify-center flex">
+                                                        <p class="font-semibold">
+                                                            R {getPrice(d.price)} 
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </a>
