@@ -95,11 +95,11 @@ const ProductLayout:Component = () => {
         <>
             {loading() 
                 ?
-                    <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10">
+                    <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10 relative">
                         <div class="w-full md:w-1/3 bg-gray-200 flex">
                             <img src={productData()?.images[0]} alt={productData()?.title} class="w-full m-auto" />
                         </div>
-                        <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-2 pb-8 pt-4">
+                        <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-2 pb-56 pt-4">
                             <h1 class="text-2xl font-bold">{productData()?.name}</h1>
                             <h3 class="text-lg font-medium">
                                 {productData()?.summary}
@@ -160,22 +160,22 @@ const ProductLayout:Component = () => {
                                 {productData()?.stock}
                             </div>
                         </div>
-                        <div class="hidden md:block w-full md:w-1/3 px-5 md:px-0">
-                            <div>
+                        <div class="fixed bg-white bottom-0 md:block w-full md:w-1/3 px-5 md:px-0 overflow-hidden h-60">
+                            {/* <div>
                                 <h3 class="text-2xl pb-3 flex justify-between font-bold">
                                     Summary
                                 </h3>
-                            </div>
-                            <div class="text-xl pb-3 flex justify-between">
+                            </div> */}
+                            <div class="text-xl flex justify-between pt-5">
                                 <p>
-                                    Purchase
+                                    Price
                                 </p>
                                 <h3>
                                     R {(Number(productData()?.price) * selectedData().quantity).toFixed(2)}
                                 </h3>
                             </div>
-                            <div class="pb-6">
-                                <h3 class="text-xl text-center pb-3">
+                            <div class="pb-3">
+                                <h3 class="text-lg text-center pb-2">
                                     Quantity
                                 </h3>
                                 <div class="w-full h-10 border border-gray-300 rounded-sm flex">
@@ -203,10 +203,10 @@ const ProductLayout:Component = () => {
                                 >
                                     Add to Cart
                                 </button>
-                                <button onClick={addToWishlist}>
+                                <button onClick={addToWishlist} class="hidden md:block">
                                     <BsHeart />
                                 </button>
-                                <button>
+                                <button class="hidden md:block">
                                     <BsShare />
                                 </button>
                             </div>
