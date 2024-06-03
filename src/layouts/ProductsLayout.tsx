@@ -29,7 +29,6 @@ const ProductsLayout: Component = () => {
 
     const getPrice = (e: string) => {
         const getNumber = Number(e).toFixed(2);
-        
         return getNumber;
     }
 
