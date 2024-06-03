@@ -95,25 +95,25 @@ const ProductLayout:Component = () => {
         <>
             {loading() 
                 ?
-                    <div class="w-full px-2 md:px-0 md:w-11/12 m-auto pt-16 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10">
+                    <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10">
                         <div class="w-full md:w-1/3 bg-gray-200 flex">
                             <img src={productData()?.images[0]} alt={productData()?.title} class="w-full m-auto" />
                         </div>
-                        <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-5">
+                        <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-2 pb-8 pt-4">
                             <h1 class="text-2xl font-bold">{productData()?.name}</h1>
                             <h3 class="text-lg font-medium">
                                 {productData()?.summary}
                             </h3>
-                            <p>
+                            {/* <p class="bg-yellow-300">
                                 {productData()?.details}
-                            </p>
+                            </p> */}
                             <div class="flex gap-4 items-center">
-                                <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">
+                                <span class="bg-green-600 text-white text-sm px-3 pb-1 rounded-full">
                                     Gender
                                 </span>
                                 {productData()?.gender}
                             </div>
-                            <div class="w-full border-b pb-2 border-gray-300 flex justify-between">
+                            <div class="w-full border-b border-gray-300 flex justify-between">
                                 <p>
                                     Colours
                                 </p>
@@ -121,19 +121,19 @@ const ProductLayout:Component = () => {
                                     {selectedDataError().color !== '' ? selectedDataError().color : null}
                                 </p>
                             </div>
-                            <div class="flex gap-2 flex-wrap">
+                            <div class="flex gap-2 flex-wrap ">
                                 <For each={productData()?.colors}>{
                                     (c) => <div>
                                         <button
                                             onclick={() => selectColor(c)} 
-                                            class={`${c === selectedData().color ? "bg-sky-600 text-white" : null } py-1 border border-gray-300 w-24`}
+                                            class="h-6 w-6 rounded-full"
+                                            style={{"background-color": `${c}`}}
                                         >
-                                            {c}
                                         </button>
                                     </div>
                                 }</For>
                             </div>
-                            <div class="w-full border-b pb-2 border-gray-300 flex justify-between">
+                            <div class="w-full border-b border-gray-300 flex justify-between">
                                 <p>
                                     Sizes
                                 </p>
@@ -141,7 +141,7 @@ const ProductLayout:Component = () => {
                                     {selectedDataError().size !== '' ? selectedDataError().size : null}
                                 </p>
                             </div>
-                            <div class="flex gap-2 flex-wrap">
+                            <div class="flex gap-2 flex-wrap ">
                                 <For each={productData()?.sizes}>{
                                     (s) => <div>
                                         <button
@@ -153,14 +153,14 @@ const ProductLayout:Component = () => {
                                     </div>
                                 }</For>
                             </div>
-                            <div class="flex gap-4 items-center">
+                            <div class="flex gap-4 items-center ">
                                 <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">
                                     Stock Available
                                 </span>
                                 {productData()?.stock}
                             </div>
                         </div>
-                        <div class="w-full md:w-1/3 px-5 md:px-0">
+                        <div class="hidden md:block w-full md:w-1/3 px-5 md:px-0">
                             <div>
                                 <h3 class="text-2xl pb-3 flex justify-between font-bold">
                                     Summary
