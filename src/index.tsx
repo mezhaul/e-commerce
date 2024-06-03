@@ -57,7 +57,6 @@ render(() => (
 				<Route path="/accessories" component={Accessories} />
 				<Route path="/clothes" component={Clothes} />
 				<Route path="/flowers" component={Flowers} />
-				<Route path="/shops" component={Shops} />
 				<Route path="/shop/:id" component={Products} />
 				<Route path="/product/:id" component={Product} />
 				<Route path="/influencers" component={Categories} />
