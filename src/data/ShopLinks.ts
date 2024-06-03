@@ -43,12 +43,7 @@ const ShopLinks = [
         id: 5,
         title: 'Accessories',
         link: '/accessories'
-    },
-    {
-        id: 6,
-        title: 'All Shops',
-        link: '/shops'
-    },
+    }
 ];
 
 export default ShopLinks;

@@ -4,6 +4,7 @@ import Carousel from '../../components/general/Carousel';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';
 import LoadingScreen from '../../components/general/LoadingScreen';
+import Shops from './Shops';
 
 const Home:Component = () => {
 	const [loading, setLoading] = createSignal(false);
@@ -27,18 +28,8 @@ const Home:Component = () => {
 
 	return (
 		<>
-		<Hero />
-			<div class='h-52 md:h-96'>
-				{loading()
-					?
-						<>
-							{shopList().length > 0 && <Carousel shopLinks={shopList()} />}
-						</>
-							
-					:
-						<LoadingScreen />
-				}
-			</div>
+			<Hero />
+			<Shops />
 		</>
 	)
 }
