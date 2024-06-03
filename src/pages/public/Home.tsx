@@ -1,6 +1,5 @@
 import { Component, createEffect, createSignal } from 'solid-js'
 import Hero from '../../components/general/Hero'
-import HomeBanner from '../../components/pageComponents/homeComponents/HomeBanner';
 import Carousel from '../../components/general/Carousel';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/config';
@@ -29,14 +28,6 @@ const Home:Component = () => {
 	return (
 		<>
 		<Hero />
-			{/* <div class='w-full md:w-10/12 m-auto px-6 pt-10 md:pt-14'>
-				<h1 class='text-2xl font-bold pb-4'>
-					Introducing Mez Haul
-				</h1>
-				<p class='text-sm'>
-					Experience fast, efficient delivery from your favorite stores, all in one place. Shop multiple stores with a single delivery fee of just R95, ensuring next-day arrival. Save time and focus on what matters most, with the convenience and simplicity of our centralized platform
-				</p>
-			</div> */}
 			<div class='h-52 md:h-96'>
 				{loading()
 					?
@@ -48,7 +39,6 @@ const Home:Component = () => {
 						<LoadingScreen />
 				}
 			</div>
-			{/* <HomeBanner /> */}
 		</>
 	)
 }
