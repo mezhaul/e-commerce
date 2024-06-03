@@ -33,7 +33,7 @@ const Home:Component = () => {
 				<h1 class='text-3xl font-bold pb-4'>
 					Introducing Mez Haul
 				</h1>
-				<p class=''>
+				<p class='text-sm'>
 					Experience fast, efficient delivery from your favorite stores, all in one place. Shop multiple stores with a single delivery fee of just R95, ensuring next-day arrival. Save time and focus on what matters most, with the convenience and simplicity of our centralized platform
 				</p>
 			</div>
