@@ -177,7 +177,7 @@ const ProductLayout:Component = () => {
                                 {productData()?.stock}
                             </div>
                         </div>
-                        <div class={`fixed md:relative bg-white md:bg-gray-100 bottom-0 md:block w-full md:w-1/3 px-5 md:px-0 ${scrollFunc() ? 'h-64' : 'h-0'} ease-in-out duration-500 overflow-hidden md:h-auto`}>
+                        <div class={`fixed md:relative bg-white md:bg-gray-100 bottom-0 md:block w-full md:w-1/3 px-5 md:px-0 ${scrollFunc() ? 'h-60 border-t' : 'h-0'} ease-in-out duration-500 overflow-hidden md:h-auto`}>
                             {/* <div>
                                 <h3 class="text-2xl pb-3 flex justify-between font-bold">
                                     Summary
