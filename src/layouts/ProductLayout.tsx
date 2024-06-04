@@ -94,7 +94,7 @@ const ProductLayout:Component = () => {
 
     const handleScroll = () => {
         const scrollY = window.scrollY;
-        if(scrollY > 348){
+        if(scrollY > 248){
             setScrollFunc(true);
         } else {
             setScrollFunc(false);
