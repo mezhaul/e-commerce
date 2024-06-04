@@ -1,6 +1,6 @@
 import { useParams } from "@solidjs/router";
 import { Timestamp, addDoc, collection, doc, getDoc } from "firebase/firestore";
-import { Component, For, createEffect, createSignal } from "solid-js";
+import { Component, For, createEffect, createSignal, onMount } from "solid-js";
 import { db } from "../firebase/config";
 import { BsHeart, BsShare } from "solid-icons/bs";
 import cookie from "cookiejs";
@@ -11,6 +11,7 @@ import { IoStar } from 'solid-icons/io'
 
 const ProductLayout:Component = () => {
     const [loading, setLoading] = createSignal(false);
+    const [scrollFunc, setScrollFunc] = createSignal(false);
     const {addToCart} = useCartContext();
     const [productData, setProductData] = createSignal<any>();
     const [selectedData,setSelectedData] = createSignal({
@@ -29,7 +30,7 @@ const ProductLayout:Component = () => {
     createEffect(() => {
         getProductData(id)
     });
-    
+
     const getProductData = async (e: any) => {
         const docRef = doc(db, "products", `${e}`);
         const docSnap = await getDoc(docRef);
@@ -91,9 +92,25 @@ const ProductLayout:Component = () => {
         setSelectedDataError((prv) => ({...prv,size:''}));
     }
 
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        if(scrollY > 348){
+            setScrollFunc(true);
+        } else {
+            setScrollFunc(false);
+        }
+      };
+
+      onMount(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        // Optionally clean up the event listener on component unmount
+        return () => window.removeEventListener('scroll', handleScroll);
+      });
+
     return (
         <>
-            {loading() 
+            {loading()
                 ?
                     <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10 relative">
                         <div class="w-full md:w-1/3 bg-gray-200 flex">
@@ -125,7 +142,7 @@ const ProductLayout:Component = () => {
                                 <For each={productData()?.colors}>{
                                     (c) => <div>
                                         <button
-                                            onclick={() => selectColor(c)} 
+                                            onclick={() => selectColor(c)}
                                             class="h-6 w-6 rounded-full"
                                             style={{"background-color": `${c}`}}
                                         >
@@ -145,7 +162,7 @@ const ProductLayout:Component = () => {
                                 <For each={productData()?.sizes}>{
                                     (s) => <div>
                                         <button
-                                            onClick={() => selectSize(s)} 
+                                            onClick={() => selectSize(s)}
                                             class={`${selectedData().size === s ? "bg-sky-600 text-white" : null} py-1 border border-gray-300 w-16`}
                                         >
                                             {s}
@@ -160,7 +177,7 @@ const ProductLayout:Component = () => {
                                 {productData()?.stock}
                             </div>
                         </div>
-                        <div class="fixed bg-white bottom-0 md:block w-full md:w-1/3 px-5 md:px-0 overflow-hidden h-60">
+                        <div class={`fixed md:relative bg-white md:bg-gray-100 bottom-0 md:block w-full md:w-1/3 px-5 md:px-0 ${scrollFunc() ? 'h-64' : 'h-0'} ease-in-out duration-500 overflow-hidden md:h-auto`}>
                             {/* <div>
                                 <h3 class="text-2xl pb-3 flex justify-between font-bold">
                                     Summary
@@ -180,7 +197,7 @@ const ProductLayout:Component = () => {
                                 </h3>
                                 <div class="w-full h-10 border border-gray-300 rounded-sm flex">
                                     <button
-                                        onClick={() => setSelectedData((prv) => ({...prv,quantity: selectedData().quantity !== 1 ? selectedData().quantity - 1 : selectedData().quantity}))} 
+                                        onClick={() => setSelectedData((prv) => ({...prv,quantity: selectedData().quantity !== 1 ? selectedData().quantity - 1 : selectedData().quantity}))}
                                         class="w-1/4 border-r h-10 border-gray-300 bg-gray-200 hover:bg-gray-300 duration-300"
                                     >
                                         <AiOutlineMinus class="m-auto" />
@@ -189,7 +206,7 @@ const ProductLayout:Component = () => {
                                         <p class="m-auto">{selectedData().quantity}</p>
                                     </div>
                                     <button
-                                        onClick={() => setSelectedData((prv) => ({...prv,quantity: selectedData().quantity + 1}))} 
+                                        onClick={() => setSelectedData((prv) => ({...prv,quantity: selectedData().quantity + 1}))}
                                         class="w-1/4 h-10 flex bg-gray-200 hover:bg-gray-300 duration-300"
                                     >
                                         <AiOutlinePlus class="m-auto" />
@@ -198,7 +215,7 @@ const ProductLayout:Component = () => {
                             </div>
                             <div class="flex items-center gap-5">
                                 <button
-                                    onClick={addToShoppingCart} 
+                                    onClick={addToShoppingCart}
                                     class="w-full bg-black h-10 text-white px-10 rounded-sm"
                                 >
                                     Add to Cart
