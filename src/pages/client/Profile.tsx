@@ -10,22 +10,22 @@ const Profile:Component = () => {
     const [ loading, setLoading ] = createSignal(false);
     const [ btnLoading, setBtnLoadin ] = createSignal(false);
     const [ userData, setUserData ] = createSignal({
-        name: '', 
+        name: '',
         surname: '',
         email: '',
         cellphone: ''
     });
     const {isAuth} = useAuthContext();
-    
+
     const [ userDataError, setUserDataError ] = createSignal({
-        name: '', 
+        name: '',
         surname: '',
         email: '',
         cellphone: ''
     });
 
     const navigate = useNavigate();
-    
+
     createEffect(() => {
         if (!isAuth()) {
             navigate('/');
@@ -95,7 +95,7 @@ const Profile:Component = () => {
         } finally {
             alert('Profile updated successfully');
             setBtnLoadin(false);
-        }    
+        }
     }
 
     return (
@@ -109,10 +109,10 @@ const Profile:Component = () => {
                         <div class="py-2">
                             <label>Name</label>
                         </div>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="name"
-                            value={userData().name} 
+                            value={userData().name}
                             placeholder={userDataError().name !== '' ? userDataError().name : 'Enter name'}
                             onChange={(e) => handleChange(e)}
                             class="w-full max-w-[450px] border h-9 px-2"
@@ -120,10 +120,10 @@ const Profile:Component = () => {
                         <div class="py-2">
                             <label>Surname</label>
                         </div>
-                        <input 
-                            type="text" 
-                            name="surname" 
-                            value={userData().surname} 
+                        <input
+                            type="text"
+                            name="surname"
+                            value={userData().surname}
                             placeholder={userDataError().surname !== '' ? userDataError().surname : 'Enter surname'}
                             onChange={(e) => handleChange(e)}
                             class="w-full max-w-[450px] border h-9 px-2"
@@ -131,10 +131,10 @@ const Profile:Component = () => {
                         <div class="py-2">
                             <label>Email</label>
                         </div>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            value={userData().email} 
+                        <input
+                            type="email"
+                            name="email"
+                            value={userData().email}
                             placeholder={userDataError().email !== '' ? userDataError().email : 'Enter email'}
                             onChange={(e) => handleChange(e)}
                             class="w-full max-w-[450px] border h-9 px-2"
@@ -142,20 +142,20 @@ const Profile:Component = () => {
                         <div class="py-2">
                             <label>Cellphone</label>
                         </div>
-                        <input 
-                            type="text" 
-                            name="cellphone" 
+                        <input
+                            type="text"
+                            name="cellphone"
                             value={userData().cellphone}
                             placeholder={userDataError().cellphone !== '' ? userDataError().cellphone : 'Enter cellphone'}
-                            onChange={(e) => handleChange(e)} 
+                            onChange={(e) => handleChange(e)}
                             class="w-full max-w-[450px] border h-9 px-2"
                         />
                         <br></br>
                         <button
-                            onClick={handleSubmit} 
-                            class="w-full max-w-[450px] absolute bottom-5 bg-black h-9 mt-5 text-white"
+                            onClick={handleSubmit}
+                            class="w-full max-w-[450px] lg:absolute bottom-5 bg-black h-9 mt-5 text-white"
                         >
-                            {btnLoading() 
+                            {btnLoading()
                                 ?
                                     <div class="loaderSmall m-auto"></div>
                                 :

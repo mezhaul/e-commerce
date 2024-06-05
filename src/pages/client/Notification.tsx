@@ -13,13 +13,13 @@ const Notification:Component = () => {
     const userId = cookie.get('userId');
 
     const navigate = useNavigate();
-    
+
     createEffect(() => {
         if (!isAuth()) {
             navigate('/login');
         }
     });
-    
+
     createEffect(() => {
         getUserListNotifications(userId)
     });
@@ -45,12 +45,12 @@ const Notification:Component = () => {
             {loading()
                 ?
                     <>
-                        {listOfNotifications().length >0 
+                        {listOfNotifications().length >0
                             ?
                                 <>
                                     <div class="w-full bg-white flex mt-3">
                                         <div class="w-1/5 border-r border-gray-300 py-2 text-center">
-                                            Notification 
+                                            Notification
                                         </div>
                                         <div class="w-1/5 border-r border-gray-300 py-2 text-center">
                                             Date
@@ -80,7 +80,7 @@ const Notification:Component = () => {
                                 </>
                             :
                                 <div class="w-full h-[70vh] flex">
-                                    <div class="m-auto">
+                                    <div class="m-auto text-center">
                                         There are currently no notifications at the moment
                                     </div>
                                 </div>

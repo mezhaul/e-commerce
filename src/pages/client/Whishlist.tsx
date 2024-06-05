@@ -13,7 +13,7 @@ const Whishlist:Component = () => {
     const [ loading, setLoadin] = createSignal(false);
     const userId = cookie.get('userId');
     const navigate = useNavigate();
-    
+
     createEffect(() => {
         if (!isAuth()) {
             navigate('/login');
@@ -22,7 +22,7 @@ const Whishlist:Component = () => {
 
     createEffect(() => {
         getAllUserWhistlistItems(userId);
-    }); 
+    });
 
     const getAllUserWhistlistItems = async (e: any) => {
         const q = query(collection(db, "whishlist"), where("user_id", "==", `${e}`));
@@ -53,7 +53,7 @@ const Whishlist:Component = () => {
                 {loading()
                     ?
                         <>
-                        
+
                             {favouriteData().length > 0
                                 ?
                                 <>
@@ -76,7 +76,7 @@ const Whishlist:Component = () => {
                                     </div>
                                     <div class={`${favouriteData().length > 6 ? "overflow-y-scroll" : null } w-full flex flex-col gap-2 py-2 h-[63vh]`}>
                                         <For each={favouriteData()}>{
-                                            (f) => 
+                                            (f) =>
                                                 <div class="flex bg-white items-center">
                                                     <div class="w-1/5 px-2 py-1">
                                                         <img src={f.image} alt="whishlist item" class="h-16"/>
@@ -104,12 +104,12 @@ const Whishlist:Component = () => {
                                                         </button>
                                                     </div>
                                                 </div>
-                                        }</For>   
+                                        }</For>
                                     </div>
                                 </>
                                 :
                                     <div class="w-full h-[70vh] flex">
-                                        <div class="m-auto">
+                                        <div class="m-auto text-center">
                                             No items in your wishlist at the current moment
                                         </div>
                                     </div>

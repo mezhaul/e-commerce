@@ -22,6 +22,7 @@ const Nav: Component = () => {
   const [shopMobileMenu,setShopMobileMenu] = createSignal(false);
   const {cart} = useCartContext();
   const [menuOpen, setMenuOpen] = createSignal(false);
+  const [mobileProfileMenu, setMobileProfileMenu] = createSignal(false);
 
   function toggleMenu() {
 	setMenuOpen(!menuOpen());
@@ -49,6 +50,10 @@ const Nav: Component = () => {
 	if(shopMobileMenu()){
 		setShopMobileMenu(false);
 	}
+  }
+
+  const toggleProfileMenuMobile = () => {
+	setMobileProfileMenu(!mobileProfileMenu());
   }
 
   return (
@@ -286,9 +291,22 @@ const Nav: Component = () => {
 				</button>
 		  </div>
 		  <div class="w-1/4 flex">
+			<div class={`absolute bg-black ${mobileProfileMenu() ? 'h-52' : 'h-0'} w-full left-0 bottom-[55px] overflow-hidden z-40 duration-300 ease-in-out`}>
+				<ul class="pt-2">
+					<For each={Links}>{
+						(l) => (
+							<a href={l.link}>
+								<li class={`py-2 px-5 text-center ${location.pathname === l.link ? 'bg-gray-500 text-white' : ''}`}>
+									{l.title}
+								</li>
+							</a>
+						)
+					}</For>
+				</ul>
+			</div>
 		  	<button
 				class="m-auto"
-				onClick={toggleProfileMenu}
+				onClick={toggleProfileMenuMobile}
 			>
 				<IoPersonCircleOutline class="text-3xl" />
 			</button>

@@ -13,7 +13,7 @@ const Orders:Component = () => {
     }
 
     const navigate = useNavigate();
-    
+
     createEffect(() => {
         if (!isAuth()) {
             navigate('/');
@@ -60,7 +60,7 @@ const Orders:Component = () => {
                     </>
                 :
                     <div class="w-full h-[70vh] flex">
-                        <div class="m-auto">
+                        <div class="m-auto text-center">
                             You currently have no orders at the moment
                         </div>
                     </div>

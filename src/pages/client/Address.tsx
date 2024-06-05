@@ -8,7 +8,7 @@ const Address:Component = () => {
     const [address,setAddress] = createSignal<string>();
     const [addresses,setAddresses] = createSignal<any[]>([]);
     const navigate = useNavigate();
-    
+
     createEffect(() => {
         if (!isAuth()) {
             navigate('/');
@@ -77,7 +77,7 @@ const Address:Component = () => {
                 </>
                 :
                 <div class="w-full h-[60vh] flex">
-                    <div class="m-auto">
+                    <div class="m-auto text-center">
                         No addresses listed at moment
                     </div>
                 </div>
