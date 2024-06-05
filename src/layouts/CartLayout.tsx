@@ -1,6 +1,6 @@
-import { Component, For, createContext, createSignal } from "solid-js";
+import { Component, For, createSignal } from "solid-js";
 import { useCartContext } from "../context/CartContext";
-import { IoArrowUp, IoChevronDown, IoChevronUp, IoTrashBin } from "solid-icons/io";
+import { IoChevronDown, IoChevronUp, IoTrashBin } from "solid-icons/io";
 import { useNavigate } from "@solidjs/router";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "solid-icons/ai";
 
