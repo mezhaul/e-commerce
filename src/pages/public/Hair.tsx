@@ -22,7 +22,6 @@ const Hair = () => {
             const doc_data = doc.data();
             const new_data = Object.assign(doc_id, doc_data);
             newData.push(new_data);
-            console.log(new_data);
         });
         setListOfLadiesProducts(newData);
         setLoading(true);
@@ -31,17 +30,17 @@ const Hair = () => {
     const getPrice = (e: string) => {
         const convertNum = Number(e).toFixed(2);
         return convertNum
-    } 
+    }
 
     return (
         <div class="w-full md:w-11/12 m-auto px-2 md:px-0 pt-16 lg:pt-20 flex gap-5 py-10 mb:pb-10">
-            {loading() 
+            {loading()
                 ? (
                     <div class="w-full flex flex-wrap md:gap-[9.5px]">
-                        {listOfLadiesProducts().length > 0 
+                        {listOfLadiesProducts().length > 0
                             ? (
                                 <For each={listOfLadiesProducts()}>
-                                    {(d) => 
+                                    {(d) =>
                                         <a href={`/product/${d.id}`} class="w-1/2 lg:w-1/6 max-w-56 p-1 md:p-0">
                                             <div class="w-full hover:shadow bg-white border border-gray-300">
                                                 <div class="w-full h-48 md:h-72 overflow-hidden bg-gray-200">
@@ -53,7 +52,7 @@ const Hair = () => {
                                                     </h3>
                                                     <div class="w-full justify-center flex">
                                                         <p class="font-semibold">
-                                                            R {getPrice(d.price)} 
+                                                            R {getPrice(d.price)}
                                                         </p>
                                                     </div>
                                                 </div>

@@ -7,7 +7,7 @@ import cookie from "cookiejs";
 import { useCartContext } from "../context/CartContext";
 import LoadingScreen from "../components/general/LoadingScreen";
 import { AiOutlineMinus, AiOutlinePlus } from "solid-icons/ai";
-import { IoStar } from 'solid-icons/io'
+import { IoHeartOutline, IoStar, IoStarOutline } from 'solid-icons/io'
 
 const ProductLayout:Component = () => {
     const [loading, setLoading] = createSignal(false);
@@ -113,8 +113,10 @@ const ProductLayout:Component = () => {
             {loading()
                 ?
                     <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10 relative">
-                        <div class="w-full md:w-1/3 bg-gray-200 flex">
+                        <div class="w-full md:w-1/3 bg-gray-200 flex relative">
                             <img src={productData()?.images[0]} alt={productData()?.title} class="w-full m-auto" />
+                            <IoHeartOutline class="absolute bottom-5 left-5 text-3xl text-gray-500"/>
+                            <IoStarOutline class="absolute bottom-5 right-5 text-3xl text-gray-500"/>
                         </div>
                         <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-2 pb-56 pt-4">
                             <h1 class="text-2xl font-bold">{productData()?.name}</h1>

@@ -133,7 +133,7 @@ const CartLayout:Component = () => {
                                 Price
                             </h1>
                             <div>
-                                R {getTotal()}
+                                R {getTotal().toFixed(2)}
                             </div>
                         </div>
                         <div class="w-11/12 m-auto pt-1">
