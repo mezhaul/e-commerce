@@ -118,7 +118,7 @@ const CheckoutLayout:Component = () => {
     return (
         <div class="w-full md:w-11/12 m-auto pt-16 md:pt-20 flex gap-5">
             <div class="w-full lg:w-2/3 m-auto px-3 md:p-5 md:h-[87vh] ">
-                <h1 class="text-2xl pb-3">Checkout</h1>
+                <h1 class="text-2xl font-semibold">Checkout</h1>
                 <div class="w-full flex md:gap-5 flex-wrap md:flex-nowrap">
                     <div class="hidden md:flex w-full md:w-1/2 flex-col gap-1">
                         <div>
