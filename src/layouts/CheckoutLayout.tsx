@@ -42,7 +42,7 @@ const CheckoutLayout:Component = () => {
     }
 
     const handleCheckoutData = (e: any) => {
-        const { name, value } = e.currentTarget; 
+        const { name, value } = e.currentTarget;
         setCheckOutData((prv) => ({...prv,[name]:value}));
     }
 
@@ -55,7 +55,7 @@ const CheckoutLayout:Component = () => {
         const Total = cart().map((i) => {
             const price = Number(i.price);
             const qty = i.quantity;
-            const total = Number((price * qty).toFixed(2)); 
+            const total = Number((price * qty).toFixed(2));
             return total;
         });
         return Total
@@ -115,12 +115,12 @@ const CheckoutLayout:Component = () => {
         .catch((error) => console.error(error));
     }
 
-    return (   
-        <div class="w-11/12 m-auto pt-20 flex gap-5">
-            <div class="w-full lg:w-2/3 m-auto p-5 md:h-[87vh] ">
+    return (
+        <div class="w-full md:w-11/12 m-auto pt-16 md:pt-20 flex gap-5">
+            <div class="w-full lg:w-2/3 m-auto px-3 md:p-5 md:h-[87vh] ">
                 <h1 class="text-2xl pb-3">Checkout</h1>
                 <div class="w-full flex md:gap-5 flex-wrap md:flex-nowrap">
-                    <div class="w-full md:w-1/2 flex flex-col gap-1">
+                    <div class="hidden md:flex w-full md:w-1/2 flex-col gap-1">
                         <div>
                             <h3 class="text-lg">Cart Summary:</h3>
                         </div>
@@ -144,7 +144,7 @@ const CheckoutLayout:Component = () => {
                         <div>
                             <h3 class="text-lg">Location:</h3>
                         </div>
-                        {locationList().length > 0 
+                        {locationList().length > 0
                             ?
                                 <select
                                     name="location"
@@ -156,8 +156,8 @@ const CheckoutLayout:Component = () => {
                                 </select>
                             :
                                 <div class="relative">
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="location"
                                         onChange={(e) => handleCheckoutData(e)}
                                         oninput={(e) => handleCheckoutDataError(e)}
@@ -170,8 +170,8 @@ const CheckoutLayout:Component = () => {
                         <div>
                             <label>Recipient's Name</label>
                         </div>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="recipientName"
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
@@ -181,8 +181,8 @@ const CheckoutLayout:Component = () => {
                         <div>
                             <label>Contact number</label>
                         </div>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="primaryContact"
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
@@ -192,8 +192,8 @@ const CheckoutLayout:Component = () => {
                         <div>
                             <label>Alternative number</label>
                         </div>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             name="alternativeContact"
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
@@ -203,18 +203,18 @@ const CheckoutLayout:Component = () => {
                         <div>
                             <label>Add Instructions</label>
                         </div>
-                        <textarea 
-                            name="instruction" 
-                            cols="30" 
-                            rows="4"
+                        <textarea
+                            name="instruction"
+                            cols="30"
+                            rows="2"
                             onChange={(e) => handleCheckoutData(e)}
                             onInput={(e) => handleCheckoutDataError(e)}
                             placeholder="Enter instructions"
                             class="border resize-none rounded-sm p-2"
                         ></textarea>
                         <button
-                            onclick={handleSubmit} 
-                            class="bg-black mt-5 md:absolute md:bottom-5 h-10 text-white px-5 w-full max-w-[450px]"
+                            onclick={handleSubmit}
+                            class="bg-black mt-3 md:absolute md:bottom-5 h-10 text-white px-5 w-full max-w-[450px]"
                         >
                             Proceed to payment
                         </button>
@@ -223,6 +223,6 @@ const CheckoutLayout:Component = () => {
             </div>
         </div>
     )
-} 
+}
 
 export default CheckoutLayout;

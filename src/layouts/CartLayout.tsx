@@ -20,7 +20,6 @@ const CartLayout:Component = () => {
             let productQty = i.quantity;
             let total = (productPrice * productQty).toFixed(2);
             totalPrice = Number(total) + totalPrice
-            // return total;
         });
         return totalPrice;
     }
@@ -42,7 +41,7 @@ const CartLayout:Component = () => {
     }
 
     return (
-        <div class="md:w-11/12 px-3 m-auto md:pt-20 pt-16 flex gap-5">
+        <div class="w-full md:w-11/12 px-3 m-auto md:pt-20 pt-16 flex gap-5">
             <div class="w-full relative md:w-2/3 m-auto md:p-5 md:h-[87vh]">
                 <div class="w-full">
                     <h1 class="text-2xl font-semibold">Cart Items</h1>
@@ -53,23 +52,6 @@ const CartLayout:Component = () => {
                         Continue Shopping
                     </button>
                 </div>
-                {/* <div class="w-full bg-black text-white py-2 flex mt-3">
-                    <div class="px-2">
-                        Image
-                    </div>
-                    <div class="px-2">
-                        Details
-                    </div>
-                    <div class="px-8">
-                        QTY
-                    </div>
-                    <div class="px-2">
-                        Total
-                    </div>
-                    <div class="px-2">
-                        Action
-                    </div>
-                </div> */}
                 <div class="w-full flex flex-col gap-3 mt-2 h-[50vh] overflow-y-auto">
                     <For each={cart()}>{
                         (i) => <div  class="w-full flex text-sm items-center bg-white border shadow">
@@ -80,7 +62,6 @@ const CartLayout:Component = () => {
                                 <h4 class="">
                                     {i.name}
                                 </h4>
-                                {/* {i.size} {i.color} */}
                             </div>
                             <div class=" px-2 flex">
                                 <button
