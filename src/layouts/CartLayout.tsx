@@ -131,7 +131,7 @@ const CartLayout:Component = () => {
                         </div>
                     </div>
                 </div>
-                <div class={`w-full fixed bottom-0 ${showTotal() ? 'h-48' : 'h-28'} bg-white border-t left-0 over duration-300 ease-in-out`}>
+                <div class={`w-full fixed bottom-0 ${showTotal() ? 'h-48' : 'h-28'} bg-white border-t left-0 over duration-300 ease-in-out md:hidden`}>
                     <div class="w-full relative">
                         <button
                             onClick={openTotal}
