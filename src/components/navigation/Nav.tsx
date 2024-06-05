@@ -246,7 +246,11 @@ const Nav: Component = () => {
 		  </div>
 		  {isAuth()
 		  	?
-				null
+			  <div class="absolute bottom-0 w-full flex flex-wrap p-4 bg-black">
+				<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={handleLogout}>
+					Logout
+				</button>
+			  </div>
 			:
 				<div class="absolute bottom-0 w-full flex flex-wrap p-4 bg-black">
 					<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={() => goToPage('/login')}>
