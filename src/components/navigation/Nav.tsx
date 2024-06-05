@@ -291,7 +291,7 @@ const Nav: Component = () => {
 				</button>
 		  </div>
 		  <div class="w-1/4 flex">
-			<div class={`absolute bg-black ${mobileProfileMenu() ? 'h-52' : 'h-0'} w-full left-0 bottom-[55px] overflow-hidden z-40 duration-300 ease-in-out`}>
+			<div class={`absolute bg-black ${mobileProfileMenu() ? 'h-52' : 'h-0'} w-full left-0 bottom-[55px] overflow-hidden z-40 duration-100 ease-in-out`}>
 				<ul class="pt-2">
 					<For each={Links}>{
 						(l) => (
