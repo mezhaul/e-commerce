@@ -113,10 +113,12 @@ const ProductLayout:Component = () => {
             {loading()
                 ?
                     <div class="w-full md:px-0 md:w-11/12 m-auto pt-14 md:pt-20 flex md:gap-5 flex-wrap md:flex-nowrap py-10 relative">
-                        <div class="w-full md:w-1/3 bg-gray-200 flex relative">
+                        <div class="w-full md:w-1/3 bg-gray-200 flex relative border-b border-gray-200">
                             <img src={productData()?.images[0]} alt={productData()?.title} class="w-full m-auto" />
-                            <IoHeartOutline class="absolute bottom-5 left-5 text-3xl text-gray-500"/>
-                            <IoStarOutline class="absolute bottom-5 right-5 text-3xl text-gray-500"/>
+                            <div class="absolute bottom-0 items-center flex gap-4 right-3">
+                                <IoHeartOutline class="text-2xl text-gray-500"/>
+                                <IoStarOutline class="text-2xl text-gray-500"/>
+                            </div>
                         </div>
                         <div class="w-full px-5 md:px-0 md:w-1/3 flex flex-col gap-2 pb-56 pt-4">
                             <h1 class="text-2xl font-bold">{productData()?.name}</h1>
