@@ -244,14 +244,19 @@ const Nav: Component = () => {
 					</button>
 				</ul>
 		  </div>
-		<div class="absolute bottom-0 w-full flex flex-wrap p-4 bg-black">
-			<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={() => goToPage('/login')}>
-				Login
-			</button>
-			<button class="w-full border border-white h-10 rounded-sm" onclick={() => goToPage('/register')}>
-				Register
-			</button>
-		</div>
+		  {isAuth()
+		  	?
+				null
+			:
+				<div class="absolute bottom-0 w-full flex flex-wrap p-4 bg-black">
+					<button class="w-full border border-white h-10 rounded-sm mb-4" onclick={() => goToPage('/login')}>
+						Login
+					</button>
+					<button class="w-full border border-white h-10 rounded-sm" onclick={() => goToPage('/register')}>
+						Register
+					</button>
+				</div>
+		  }
         </div>
       </div>
 	  <div class="fixed bottom-0 py-3 bg-black w-full flex md:hidden border-t text-white border-gray-300">
